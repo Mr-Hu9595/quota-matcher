@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Temporary files
+*.log
+temp_*.txt
+quota_*.txt
+all_chapters.txt
+chapter4_structure.txt
+=*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

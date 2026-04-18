@@ -1,0 +1,15 @@
+{
+  "name": "quota-matcher",
+  "description": "工程量清单智能匹配定额子目 - 自动解析Word/Excel清单，使用AI语义匹配河南省2016安装工程预算定额",
+  "trigger_keywords": [
+    "匹配定额",
+    "套定额",
+    "清单预算",
+    "工程量清单",
+    "做预算",
+    "匹配子目"
+  ],
+  "version": "1.0.0",
+  "author": "Claude",
+  "main_script": "quota_matcher.py"
+}
