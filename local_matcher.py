@@ -1,7 +1,28 @@
 """
 本地关键词匹配模块
 功能：不使用API，直接通过关键词匹配定额
-参考北京易玖环保平台代码的匹配策略改进
+参考：
+  - 3万吨CHDM项目 + 电气/电信全套预算表 (2026年4月)
+  - 《河南省房屋建筑与装饰工程预算定额》《河南省通用安装工程预算定额》《河南省市政工程预算定额》综合解释 (HA 2016)
+
+★ 定额选用规则（来源：河南省定额综合解释）：
+  【第四册 电气设备安装工程】
+  - 电缆（电力电缆）：按"单芯最大截面"套定额（如4×240+1×120 → 240mm²）
+  - 电缆（控制电缆）：按"芯数"套定额（如10×1.5 → 10芯）
+  - 五芯以上电缆敷设：五芯×1.15，六芯×1.3，每增一芯+15%（定额按三芯编制）
+  - 电缆头制作安装：三芯及三芯连地编制；五芯头×1.15，六芯头×1.3，每增一芯+15%；单芯头×0.3
+  - 地下室安装工程：定额人工费×1.12
+  - 管井内安装工程：定额人工费×1.16
+  - 电缆π接箱：按室内端子箱套用
+  - 总等电位箱：按半周长0.5m成套配电箱×0.4
+  - 避雷引下线与避雷网跨接：已综合，不另计
+  - 凿槽/凿孔(洞)：按第十册执行
+  - 多芯导线：折合成单芯截面套用
+  - 带开关插座：按插座种类套单相/三相插座
+  【第五册 建筑智能化】
+  - 智能化配管工程由总包施工时，插座底盒/过线盒按第四册接线盒子目执行
+  【第九册 消防工程】
+  - 消火栓按钮（无手动启泵系统）：按火灾报警按钮执行
 """
 
 import os
@@ -14,7 +35,7 @@ class LocalMatcher:
 
     # ============================================================
     # 精准材料/设备→定额映射表
-    # 参考3万吨CHDM项目 + 电气/电信全套预算表 (2026年4月)
+    # 参考：3万吨CHDM项目 + 电信全套预算表 + 河南省定额综合解释
     # 格式: {材料名: 定额编号} 或 {材料名: {规格: 定额编号}}
     # ============================================================
     MATERIAL_QUOTA_MAP = {
@@ -205,6 +226,9 @@ class LocalMatcher:
         "等电位连接": "5-7-65",
         "接地跨接线": "5-7-65",  # 注意：5-7-65是等电位跨接，4-10-60是构架接地
         "黄绿双色线": "5-7-65",
+        "总等电位箱": "4-2-75",  # 按半周长0.5m成套配电箱×0.4（人工系数）
+        "电缆π接箱": "4-4-12",    # 按室内端子箱套用（综合解释第四册）
+        "π接箱": "4-4-12",       # 同上
 
         # ========== 监控设备 (5-6系列) ==========
         "摄像机": {"普通": "5-6-78", "半球": "5-6-79", "球机": "5-6-80", "防爆": "5-6-82", "云台": "5-6-84"},
@@ -276,6 +300,10 @@ class LocalMatcher:
 
         # ========== 其他设备 ==========
         "浪涌保护器": "12-11-44",
+        "光纤收发器": "11-9-65",
+        "光端机": "11-9-65",
+        "千兆收发器": "11-9-65",
+        "百兆收发器": "11-9-65",
         "水泵": "1-8-97",
         "计量泵": "1-8-97",
         "潜水泵": "1-8-98",
@@ -579,12 +607,13 @@ class LocalMatcher:
             ("摄像机", "5-6-78"),
             ("监控摄像机", "5-6-78"),
             ("防爆摄像机", "5-6-82"),
+            ("枪机", "5-6-83"),
             ("半球摄像机", "5-6-79"),
             ("球型摄像机", "5-6-80"),
+            ("云台摄像机", "5-6-84"),
             ("摄像机防护罩", "5-6-99"),
             ("摄像机支架", "5-6-101"),
             ("摄像机电源", "5-6-113"),
-            ("云台", "5-6-84"),
             ("主控键盘", "5-6-147"),
             ("视频监控系统调试", "6-5-50"),
             # ========== 网络设备 ==========
@@ -689,6 +718,7 @@ class LocalMatcher:
 
         if "终端头" in item_lower or "电缆头" in item_lower:
             # 电缆终端头匹配
+            # ★ 电缆头规则（综合解释第四册）：定额按三芯编制，五芯×1.15、六芯×1.3、单芯×0.3
             if "10kV" in item_lower or "热缩" in item_lower:
                 cable_map = self.MATERIAL_QUOTA_MAP.get("10kV电力电缆终端头", {})
                 if core_match:
@@ -736,6 +766,7 @@ class LocalMatcher:
                                 if quota:
                                     return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": f"精确匹配（电力电缆终端头，最大单芯{str(section)}mm²）", "need_confirm": False}
         elif "控制电缆" in item_lower:
+            # ★ 控制电缆选用规则：按芯数选择定额编号
             cable_map = self.MATERIAL_QUOTA_MAP.get("控制电缆", {})
             # 优先用"n芯"格式，其次用"n×m"格式提取芯数
             if core_match:
@@ -755,6 +786,9 @@ class LocalMatcher:
                                 return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": f"精确匹配（控制电缆{cores}芯）", "need_confirm": False}
         elif "电力电缆" in item_lower or "电力电缆敷设" in item_lower or \
              re.search(r'(wdz-?yjz?|yjv|yv|vv|yv22|yv32|vv22|vv32)[-_\d]*\d+[×x]\d+', item_lower):
+            # ★ 电力电缆选用规则（综合解释第四册）：
+            #   定额按三芯编制，五芯×1.15、六芯×1.3、每增一芯+15%
+            #   电力电缆按"最大单芯截面"选择定额编号
             cable_map = self.MATERIAL_QUOTA_MAP.get("电力电缆", {})
             # 计算**最大单芯截面**：4×25+1×16 → max(25,16)=25mm²（按最大单芯套定额）
             if power_cable_match:
@@ -1034,6 +1068,69 @@ class LocalMatcher:
                 return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（接线盒）", "need_confirm": False}
 
         # ============================================
+        # 插排/插座匹配
+        # ============================================
+        if "插排" in item_lower or "插座" in item_lower or "排插" in item_lower:
+            socket_map = {
+                ("防爆", "三相", "≤15A"): "4-14-409",
+                ("防爆", "三相", "≤60A"): "4-14-410",
+                ("防爆", "单相带接地", "≤15A"): "4-14-407",
+                ("防爆", "单相带接地", "≤60A"): "4-14-408",
+                ("防爆", "单相", "≤15A"): "4-14-405",
+                ("防爆", "单相", "≤60A"): "4-14-406",
+                ("防爆",): "4-14-405",
+                ("三相带接地", "≤15A"): "4-14-403",
+                ("三相带接地", "≤30A"): "4-14-404",
+                ("三相", "≤15A"): "4-14-397",
+                ("三相", "≤30A"): "4-14-398",
+                ("单相带接地", "≤15A"): "4-14-395",
+                ("单相带接地", "≤30A"): "4-14-396",
+                ("单相", "≤15A"): "4-14-393",
+                ("单相", "≤30A"): "4-14-394",
+                ("暗装",): "4-14-399",
+                ("明装",): "4-14-393",
+            }
+            is_explosion = "防爆" in item_lower
+            is_three_phase = "三相" in item_lower
+            is_ground = "带接地" in item_lower or "接地" in item_lower
+            is_hidden = "暗装" in item_lower
+            is_explicit_current = any(x in item_lower for x in ["15A", "30A", "≤15", "≤30", "60A"])
+            current_15 = any(x in item_lower for x in ["15A", "≤15A", "≤15"])
+            current_30 = any(x in item_lower for x in ["30A", "≤30A", "≤30", "60A"])
+
+            # 优先按 防爆→三相/单相→电流 顺序匹配
+            if is_explosion:
+                if is_three_phase:
+                    code = socket_map.get(("防爆", "三相", "≤15A")) if not current_30 else socket_map.get(("防爆", "三相", "≤60A"))
+                else:
+                    if is_ground:
+                        code = socket_map.get(("防爆", "单相带接地", "≤15A")) if not current_30 else socket_map.get(("防爆", "单相带接地", "≤60A"))
+                    else:
+                        code = socket_map.get(("防爆", "单相", "≤15A")) if not current_30 else socket_map.get(("防爆", "单相", "≤60A"))
+                if code:
+                    quota = self.quota_by_code.get(code)
+                    if quota:
+                        return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（防爆插座）", "need_confirm": False}
+            elif is_three_phase:
+                if is_ground:
+                    code = socket_map.get(("三相带接地", "≤15A")) if not current_30 else socket_map.get(("三相带接地", "≤30A"))
+                else:
+                    code = socket_map.get(("三相", "≤15A")) if not current_30 else socket_map.get(("三相", "≤30A"))
+                if code:
+                    quota = self.quota_by_code.get(code)
+                    if quota:
+                        return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（插座）", "need_confirm": False}
+            elif is_hidden:
+                quota = self.quota_by_code.get("4-14-399")
+                if quota:
+                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（暗装插座）", "need_confirm": False}
+            else:
+                # 默认普通单相明装≤15A
+                quota = self.quota_by_code.get("4-14-393")
+                if quota:
+                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（插座）", "need_confirm": False}
+
+        # ============================================
         # 摄像机类型匹配
         # ============================================
         if "摄像机" in item_lower or "摄像头" in item_lower:
@@ -1041,14 +1138,22 @@ class LocalMatcher:
                 quota = self.quota_by_code.get("5-6-82")
                 if quota:
                     return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（防爆摄像机）", "need_confirm": False}
+            elif "枪机" in item_lower:
+                quota = self.quota_by_code.get("5-6-83")
+                if quota:
+                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（枪机）", "need_confirm": False}
+            elif "球机" in item_lower or "球型" in item_lower:
+                quota = self.quota_by_code.get("5-6-80")
+                if quota:
+                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（球型摄像机）", "need_confirm": False}
             elif "半球" in item_lower:
                 quota = self.quota_by_code.get("5-6-79")
                 if quota:
                     return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（半球摄像机）", "need_confirm": False}
-            elif "球" in item_lower:
-                quota = self.quota_by_code.get("5-6-80")
+            elif "云台" in item_lower:
+                quota = self.quota_by_code.get("5-6-84")
                 if quota:
-                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（球型摄像机）", "need_confirm": False}
+                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（云台摄像机）", "need_confirm": False}
             else:
                 quota = self.quota_by_code.get("5-6-78")
                 if quota:
@@ -1193,6 +1298,17 @@ class LocalMatcher:
             quota = self.quota_by_code.get("4-7-6")
             if quota:
                 return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": "精确匹配（金属结构件）", "need_confirm": False}
+
+        # ============================================
+        # 通用 MATERIAL_QUOTA_MAP 查找（仅限简单字符串映射，排除规格化dict映射）
+        # ============================================
+        for mat_name, code_or_map in self.MATERIAL_QUOTA_MAP.items():
+            if isinstance(code_or_map, dict):
+                continue  # 跳过规格化映射，由专门的elif处理
+            if mat_name.lower() in item_lower:
+                quota = self.quota_by_code.get(code_or_map)
+                if quota:
+                    return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": f"精确匹配（{mat_name}）", "need_confirm": False}
 
         return None
 
