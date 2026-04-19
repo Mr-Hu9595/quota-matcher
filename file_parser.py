@@ -154,19 +154,146 @@ class ExcelParser(BaseParser):
         if not valid:
             return items, [f"工作表 '{sheet_name}': {', '.join(errors)}"]
 
-        # 解析数据行
-        for i in range(header_row_index + 1, len(rows)):
+        # 一次性扫描：遇到主项目（有数量）时，同时收集其后续的延续行
+        i = header_row_index + 1
+        while i < len(rows):
             row = rows[i]
 
             if all(cell == "" or cell is None for cell in row):
+                i += 1
                 continue
 
             data = ColumnIdentifier.extract_columns(list(row), column_map)
+            has_name = data.get("name") and data["name"].strip()
+            has_qty = data.get("quantity") and data["quantity"].strip()
 
-            if data["name"] and data["quantity"]:
+            # 如果是分类标题（有名称但无数量，且只有名称列有内容）
+            if has_name and not has_qty:
+                other_cols_have_data = any(
+                    str(cell).strip() for j, cell in enumerate(row)
+                    if j != column_map.get("name") and j != column_map.get("seq")
+                    and cell and str(cell).strip()
+                )
+                if not other_cols_have_data:
+                    # 分类标题，跳过
+                    i += 1
+                    continue
+
+            # 如果有数量，是主项目，收集后续延续行并创建项目
+            if has_name and has_qty:
+                # 首先添加当前行的自身规格（如果有）
+                self_spec = ""
+                for col_idx, cell in enumerate(row):
+                    if col_idx in [column_map.get("seq"), column_map.get("name"),
+                                    column_map.get("quantity"), column_map.get("unit"),
+                                    column_map.get("remark")]:
+                        continue
+                    if cell and str(cell).strip():
+                        cell_str = str(cell).strip()
+                        # 判断是否为有效的规格值：包含字母、或包含x/×/*等乘号符号、或长度大于3且不是纯数字
+                        is_spec = (
+                            len(cell_str) > 2 and (
+                                any(c.isalpha() for c in cell_str) or  # 包含字母 (如 DN80, YJV)
+                                'x' in cell_str.lower() or  # 包含x表示尺寸 (如 25x4, 3x2.5)
+                                '×' in cell_str or '*' in cell_str or  # 包含乘号
+                                not cell_str.replace('.', '').replace('-', '').replace('/', '').replace('+', '').isdigit()  # 不是纯数字
+                            )
+                        )
+                        if is_spec:
+                            self_spec = " " + cell_str
+                            break
+
+                # 收集后续延续行
+                j = i + 1
+                continuation_specs = []
+                while j < len(rows):
+                    next_row = rows[j]
+                    if all(cell == "" or cell is None for cell in next_row):
+                        break  # 空行停止
+
+                    next_data = ColumnIdentifier.extract_columns(next_row, column_map)
+                    next_has_name = next_data.get("name") and next_data["name"].strip()
+                    next_has_qty = next_data.get("quantity") and next_data["quantity"].strip()
+
+                    if next_has_name and not next_has_qty:
+                        # 延续行，收集其规格
+                        if next_data.get("name") and next_data["name"].strip():
+                            continuation_specs.append(next_data["name"].strip())
+                        else:
+                            # 只有规格列
+                            for col_idx, cell in enumerate(next_row):
+                                if col_idx in [column_map.get("seq"), column_map.get("name"),
+                                                column_map.get("quantity"), column_map.get("unit"),
+                                                column_map.get("remark")]:
+                                    continue
+                                if cell and str(cell).strip():
+                                    cell_str = str(cell).strip()
+                                    if len(cell_str) > 2:
+                                        continuation_specs.append(cell_str)
+                                        break
+                        j += 1
+                        continue
+
+                    if not next_has_name and not next_has_qty:
+                        # 检查是否有规格值（使用智能判断）
+                        def is_spec_value(s):
+                            s = str(s).strip()
+                            if len(s) <= 2:
+                                return False
+                            # 是规格的判断：包含字母、或包含x/×/*等乘号符号、或不是纯数字
+                            return (
+                                any(c.isalpha() for c in s) or  # 包含字母
+                                'x' in s.lower() or  # 包含x表示尺寸
+                                '×' in s or '*' in s or  # 包含乘号
+                                not s.replace('.', '').replace('-', '').replace('/', '').replace('+', '').isdigit()  # 不是纯数字
+                            )
+
+                        has_spec = any(
+                            is_spec_value(cell)
+                            for k, cell in enumerate(next_row)
+                            if k not in [column_map.get("seq"), column_map.get("name"),
+                                          column_map.get("quantity"), column_map.get("unit"),
+                                          column_map.get("remark")]
+                            and cell and str(cell).strip()
+                        )
+                        if has_spec:
+                            # 延续行，收集其规格
+                            for col_idx, cell in enumerate(next_row):
+                                if col_idx in [column_map.get("seq"), column_map.get("name"),
+                                                column_map.get("quantity"), column_map.get("unit"),
+                                                column_map.get("remark")]:
+                                    continue
+                                if cell and str(cell).strip():
+                                    cell_str = str(cell).strip()
+                                    if is_spec_value(cell_str):
+                                        continuation_specs.append(cell_str)
+                                        break
+                            j += 1
+                            continue
+                        else:
+                            break  # 非延续行，停止
+                    else:
+                        break  # 遇到下一个主项目，停止
+
+                    j += 1
+
+                # 构建最终名称
+                final_name = data["name"]
+                if self_spec:
+                    final_name += self_spec
+                if continuation_specs:
+                    final_name += " " + " ".join(continuation_specs)
+                data["name"] = final_name
+
                 item = self._create_item(data, sheet_name)
                 if item:
                     items.append(item)
+
+                i = j  # 跳到延续行之后继续处理
+                continue
+
+            # 延续行或非延续行，跳过（已在上面处理）
+            i += 1
 
         return items, warnings
 
@@ -231,19 +358,35 @@ class ExcelParser(BaseParser):
             warnings.append(f"工作表 '{sheet_name}': {', '.join(errors)}")
             return items, warnings
 
-        # 解析数据行
+        # 解析数据行（处理多行条目）
+        pending_spec = ""  # 待追加的规格/备注
         for i in range(header_row_index + 1, len(rows)):
             row = rows[i]
 
             # 跳过空行
             if all(cell is None or str(cell).strip() == "" for cell in row):
+                pending_spec = ""  # 清空待追加规格
                 continue
 
             # 提取各列值
             data = ColumnIdentifier.extract_columns(list(row), column_map)
 
-            # 验证并提取有效数据
-            if data["name"] and data["quantity"]:
+            # 如果有名称但无数量，说明是延续行（如规格说明），追加到上一条的规格
+            if data["name"] and not data["quantity"]:
+                # 追加到待追加规格
+                if data["name"].strip():
+                    if pending_spec:
+                        pending_spec += "; " + data["name"].strip()
+                    else:
+                        pending_spec = data["name"].strip()
+                continue
+
+            # 有数量才创建新项目
+            if data["name"]:
+                # 将待追加规格合并到名称中
+                if pending_spec:
+                    data["name"] = data["name"] + " " + pending_spec
+                    pending_spec = ""
                 item = self._create_item(data, sheet_name)
                 if item:
                     items.append(item)
@@ -264,10 +407,14 @@ class ExcelParser(BaseParser):
             row_str = [str(cell).lower() if cell else "" for cell in row]
             row_text = "".join(row_str)
 
-            # 检查是否包含关键词
-            if any(keyword in row_text for keyword in
-                   ["名称", "项目", "设备", "材料", "数量", "工程量", "工作量"]):
-                return i
+            # 更严格的检查：必须包含"名称"或"数量"（不能只是"设备"或"项目"）
+            # 且不能只是标题行
+            header_keywords = ["名称", "数量"]
+            if any(keyword in row_text for keyword in header_keywords):
+                # 排除明显是标题的行
+                title_keywords = ["设备材料表", "equipment & material", "material list"]
+                if not any(kw in row_text.lower() for kw in title_keywords):
+                    return i
 
         return -1
 

@@ -20,3 +20,15 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Vector database (rebuild on new machine with local embedding model)
+quota.db
+chroma_data/
+*.hnsw*
+
+# Test/reference files (generated locally)
+test_*.xls
+test_*.xlsx
+debug_output.json
+reference_*.xlsx
+template_data.json

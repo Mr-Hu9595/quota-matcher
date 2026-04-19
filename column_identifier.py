@@ -13,6 +13,7 @@ class ColumnIdentifier:
     NAME_COLUMNS = [
         "名称", "项目名称", "设备名称", "材料名称",
         "工作内容", "项目", "设备", "材料",
+        "型号", "规格", "规格型号",
         "item_name", "name", "item", "description"
     ]
 
@@ -64,10 +65,10 @@ class ColumnIdentifier:
             "remark": None
         }
 
-        # 标准化表头为小写
-        normalized_headers = [h.strip().lower() for h in headers]
+        # 标准化表头为小写，并移除换行符
+        normalized_headers = [h.replace('\n', '').replace('\r', '').strip().lower() for h in headers]
 
-        # 查找各类列
+        # 查找各类列（每个候选词单独检查）
         result["name"] = cls._find_column(normalized_headers, cls.NAME_COLUMNS)
         result["quantity"] = cls._find_column(normalized_headers, cls.QUANTITY_COLUMNS)
         result["unit"] = cls._find_column(normalized_headers, cls.UNIT_COLUMNS)
@@ -91,8 +92,14 @@ class ColumnIdentifier:
         candidates_lower = [c.lower() for c in candidates]
 
         for i, header in enumerate(normalized_headers):
-            if header in candidates_lower:
-                return i
+            # 跳过空表头
+            if not header:
+                continue
+            # 支持部分匹配（例如"名称description"匹配"名称"）
+            # 检查任一候选词是否出现在表头中
+            for candidate in candidates_lower:
+                if candidate in header:
+                    return i
 
         return None
 

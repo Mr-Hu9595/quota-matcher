@@ -206,16 +206,27 @@ class VectorStore:
             }
             data = {
                 "model": "embo-01",
-                "text": text
+                "texts": [text],
+                "type": "db"  # MiniMax embeddings API requires 'texts' array and 'type' parameter
             }
 
             response = requests.post(url, headers=headers, json=data, timeout=60)
             if response.status_code == 200:
                 result = response.json()
-                if "data" in result and len(result["data"]) > 0:
-                    return result["data"][0].get("embedding")
+                # 检查业务错误码
+                base_resp = result.get("base_resp", {})
+                if base_resp.get("status_code") == 1008:
+                    print(f"  向量生成失败: 余额不足，请充值 MiniMax API")
+                    return None
+                elif base_resp.get("status_code") != 0:
+                    print(f"  向量生成失败: {base_resp.get('status_msg', '未知错误')}")
+                    return None
+                # 成功获取向量
+                vectors = result.get("vectors")
+                if vectors and len(vectors) > 0:
+                    return vectors[0].get("embedding")
             else:
-                print(f"  向量生成失败: {response.status_code}")
+                print(f"  向量生成失败: HTTP {response.status_code}")
 
         except Exception as e:
             print(f"  向量生成异常: {e}")

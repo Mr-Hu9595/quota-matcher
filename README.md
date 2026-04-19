@@ -2,6 +2,56 @@
 
 An intelligent engineering bill matching tool that automatically matches construction quantity lists (工程量清单) with quota/subsistence codes from the **Henan Province 2016 Installation Engineering Budget Quota (河南省2016安装工程预算定额)**.
 
+---
+
+## 项目进度与任务清单 (2026-04-19)
+
+### 已完成
+
+- [x] **本地规则匹配引擎** (`local_matcher.py`)
+  - MATERIAL_QUOTA_MAP 精确映射表（涵盖 100+ 常见材料/设备）
+  - 电力电缆按最大单芯截面匹配规则
+  - 控制电缆按芯数匹配规则
+  - 角钢/槽钢等金属结构件区分制作(4-7-5)和安装(4-7-6)
+  - 钢管 DN 规格精确匹配
+
+- [x] **工程量清单解析** (`file_parser.py`)
+  - Excel/Word 多格式支持
+  - 智能规格型号识别
+  - 多行条目合并
+
+- [x] **辅料配比计算** (`quota_matcher.py`)
+  - 电信：摄像头 → 防爆接线箱 + 防爆挠性管
+  - 电气：防爆灯 → 电力电缆头 + 接线盒
+
+- [x] **向量搜索模块** (`vector_store.py`)
+  - ChromaDB + SQLite 双存储架构
+  - MiniMax Embedding API 集成（代码完成，待额度）
+
+### 进行中
+
+- [ ] **向量索引构建** (因 MiniMax API 余额不足暂停)
+  - 已加载 16,881 条定额数据到 `quota.db`
+  - 待续：在高配计算机上完成向量索引构建
+
+### 待办事项
+
+1. **向量搜索增强**
+   - 使用本地 Embedding 模型（如 sentence-transformers）构建索引
+   - 推荐模型：`all-MiniLM-L6-v2`（轻量，80MB）或 `paraphrase-multilingual-MiniLM-L12-v2`（中文支持）
+
+2. **定额匹配规则完善**
+   - 持续从实际项目中发现并修复规则遗漏的条目
+   - 完善规格型号提取逻辑
+
+3. **测试覆盖**
+   - 更多真实清单格式适配
+   - 边界 case 处理
+
+---
+
+
+
 ## Features
 
 - **Multi-format Support**: Automatically parses Excel (.xlsx/.xls) and Word (.docx) engineering bills
@@ -167,11 +217,42 @@ quota-matcher/
 ├── file_parser.py          # Excel/Word parser
 ├── column_identifier.py    # Column name detection
 ├── unit_converter.py       # Unit conversion
-├── vector_store.py         # Vector database (optional)
+├── vector_store.py         # Vector database (ChromaDB + SQLite)
 ├── doc_to_docx.py          # .doc to .docx converter
+├── quantity_extractor.py   # Engineering quantity extraction
 ├── requirements.txt        # Python dependencies
-└── README.md              # This file
+├── .gitignore              # Git ignore rules
+└── README.md               # This file
 ```
+
+### 在新机器上继续开发
+
+1. **克隆仓库**
+   ```bash
+   git clone https://github.com/Mr-Hu9595/quota-matcher.git
+   cd quota-matcher
+   ```
+
+2. **安装依赖**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **安装向量模型（可选，用于本地向量搜索）**
+   ```bash
+   pip install sentence-transformers
+   ```
+
+4. **构建向量索引**（可选）
+   ```python
+   import os
+   from quota_loader import QuotaLoader
+   from vector_store import VectorStore
+
+   # 使用本地模型（推荐）
+   vs = VectorStore(embedding_model="local")
+   vs.build_index(quotas)
+   ```
 
 ## Quota Data File
 

@@ -126,6 +126,15 @@ class QuotaMatcher:
         parse_result.items = enhanced_items
         print(f"工程量识别完成，{len(enhanced_items)} 项")
 
+        # 2.6 计算辅料配比（根据用户要求）
+        print("\n[2.6/5] 正在计算辅料配比...")
+        accessory_items = self._calculate_accessories(parse_result.items)
+        if accessory_items:
+            parse_result.items.extend(accessory_items)
+            print(f"辅料配比完成，新增 {len(accessory_items)} 项")
+            for acc in accessory_items:
+                print(f"  + {acc['name']} × {acc['quantity']} {acc['unit']}")
+
         # 3. AI匹配
         print("\n[3/5] 正在AI匹配定额（此过程需要联网）...")
         results = self.matcher.batch_match(parse_result.items)
@@ -256,6 +265,79 @@ class QuotaMatcher:
         ws.freeze_panes = "A2"
 
         wb.save(output_path)
+
+    def _calculate_accessories(self, items: List[Dict]) -> List[Dict]:
+        """
+        根据清单项目计算辅料配比
+
+        电信：每个摄像头配置 1个防爆接线箱(300*300*200) + 3根防爆挠性管
+        电气：每个防爆灯配置 2个电力电缆头 + 1个接线盒
+
+        Args:
+            items: 原始清单项目列表
+
+        Returns:
+            List[Dict]: 新增的辅料项目列表
+        """
+        new_items = []
+
+        # 统计电信相关数量
+        telecom_camera_qty = 0
+        for item in items:
+            name = item.get("name", "").lower()
+            # 检测是否为防爆摄像机/摄像头
+            if any(kw in name for kw in ["防爆固定摄像机", "防爆摄像机", "摄像头", "camera"]):
+                telecom_camera_qty += item.get("quantity", 0)
+
+        if telecom_camera_qty > 0:
+            # 电信辅料：每个摄像头 1个防爆接线箱 + 3根防爆挠性管
+            new_items.append({
+                "name": "防爆接线箱 300×300×200",
+                "quantity": telecom_camera_qty,
+                "unit": "个",
+                "sheet": "辅料配比",
+                "original_unit": "个"
+            })
+            new_items.append({
+                "name": "防爆挠性管",
+                "quantity": telecom_camera_qty * 3,
+                "unit": "根",
+                "sheet": "辅料配比",
+                "original_unit": "根"
+            })
+
+        # 统计电气相关数量
+        elec_light_qty = 0
+        for item in items:
+            name = item.get("name", "")
+            name_lower = name.lower()
+            # 检测是否为防爆灯/LED灯（排除已是辅料的项目）
+            if any(kw in name for kw in ["防爆弯灯", "防爆平台灯", "防爆灯", "LED"]):
+                # 排除已是辅料的项目（以这些关键词开头）
+                is_accessory = any(
+                    name.startswith(kw) for kw in ["电力电缆头", "接线盒", "防爆接线箱", "防爆挠性管"]
+                )
+                if not is_accessory:
+                    elec_light_qty += item.get("quantity", 0)
+
+        if elec_light_qty > 0:
+            # 电气辅料：每个防爆灯 2个电力电缆头 + 1个接线盒
+            new_items.append({
+                "name": "电力电缆头",
+                "quantity": elec_light_qty * 2,
+                "unit": "个",
+                "sheet": "辅料配比",
+                "original_unit": "个"
+            })
+            new_items.append({
+                "name": "接线盒",
+                "quantity": elec_light_qty,
+                "unit": "个",
+                "sheet": "辅料配比",
+                "original_unit": "个"
+            })
+
+        return new_items
 
     def _print_statistics(self, results: List[Dict]):
         """打印统计信息"""
