@@ -179,11 +179,11 @@ class VectorStore:
 
     def _get_embedding(self, text: str, api_key: str = None) -> Optional[List[float]]:
         """
-        使用MiniMax Embedding API生成向量
+        使用 MiniMax Embedding API 或本地模型生成向量
 
         Args:
             text: 待向量化的文本
-            api_key: API密钥
+            api_key: API密钥（可选）
 
         Returns:
             向量列表，失败返回None
@@ -191,11 +191,19 @@ class VectorStore:
         if not text:
             return None
 
+        # 优先使用 MiniMax API
         api_key = api_key or os.environ.get("MINIMAX_API_KEY")
-        if not api_key:
-            print("警告: 未设置MINIMAX_API_KEY，无法生成向量")
-            return None
+        if api_key:
+            embedding = self._get_minimax_embedding(text, api_key)
+            if embedding:
+                return embedding
+            # MiniMax 失败，尝试本地模型
 
+        # 本地模型兜底
+        return self._get_local_embedding(text)
+
+    def _get_minimax_embedding(self, text: str, api_key: str) -> Optional[List[float]]:
+        """使用 MiniMax Embedding API 生成向量"""
         try:
             import requests
 
@@ -207,13 +215,12 @@ class VectorStore:
             data = {
                 "model": "embo-01",
                 "texts": [text],
-                "type": "db"  # MiniMax embeddings API requires 'texts' array and 'type' parameter
+                "type": "db"
             }
 
             response = requests.post(url, headers=headers, json=data, timeout=60)
             if response.status_code == 200:
                 result = response.json()
-                # 检查业务错误码
                 base_resp = result.get("base_resp", {})
                 if base_resp.get("status_code") == 1008:
                     print(f"  向量生成失败: 余额不足，请充值 MiniMax API")
@@ -221,7 +228,6 @@ class VectorStore:
                 elif base_resp.get("status_code") != 0:
                     print(f"  向量生成失败: {base_resp.get('status_msg', '未知错误')}")
                     return None
-                # 成功获取向量
                 vectors = result.get("vectors")
                 if vectors and len(vectors) > 0:
                     return vectors[0].get("embedding")
@@ -232,6 +238,24 @@ class VectorStore:
             print(f"  向量生成异常: {e}")
 
         return None
+
+    def _get_local_embedding(self, text: str) -> Optional[List[float]]:
+        """使用本地 sentence-transformers 模型生成向量"""
+        try:
+            from sentence_transformers import SentenceTransformer
+
+            # 使用轻量中文模型
+            model_name = "paraphrase-multilingual-MiniLM-L12-v2"
+            model = SentenceTransformer(model_name)
+            embedding = model.encode(text, convert_to_numpy=True)
+            return embedding.tolist()
+
+        except ImportError:
+            print("  错误: 未安装 sentence-transformers，请运行: pip install sentence-transformers")
+            return None
+        except Exception as e:
+            print(f"  本地向量生成异常: {e}")
+            return None
 
     def search(self, query: str, top_k: int = 10, api_key: str = None) -> List[Dict]:
         """

@@ -12,7 +12,7 @@ class QuotaLoader:
     """定额文件加载器"""
 
     # 定额文件路径
-    QUOTA_FILE = Path(__file__).parent.parent.parent / "河南省通用安装工程预算定额2016.txt"
+    QUOTA_FILE = Path(__file__).parent.parent / "db" / "河南省通用安装工程预算定额2016.txt"
 
     def __init__(self, quota_file: str = None):
         """

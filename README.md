@@ -4,128 +4,250 @@ An intelligent engineering bill matching tool that automatically matches constru
 
 ---
 
-## 项目进度与任务清单 (2026-04-19)
+## 项目目的
 
-### 已完成
+本工具实现**工程量清单到定额**的自动化匹配流程：
 
-- [x] **本地规则匹配引擎** (`local_matcher.py`)
-  - MATERIAL_QUOTA_MAP 精确映射表（涵盖 100+ 常见材料/设备）
-  - 电力电缆按最大单芯截面匹配规则
-  - 控制电缆按芯数匹配规则
-  - 角钢/槽钢等金属结构件区分制作(4-7-5)和安装(4-7-6)
-  - 钢管 DN 规格精确匹配
+```
+工程量清单（Excel/Word/PDF）
+       ↓
+   智能解析 → 提取工作内容和工程量
+       ↓
+   语义理解 → 向量数据库语义搜索
+       ↓
+   规则兜底 → 标准化条目精确匹配
+       ↓
+   单位换算 → 转换为定额标准单位
+       ↓
+广联达Excel（可直接导入）
+```
 
-- [x] **工程量清单解析** (`file_parser.py`)
-  - Excel/Word 多格式支持
-  - 智能规格型号识别
-  - 多行条目合并
-
-- [x] **辅料配比计算** (`quota_matcher.py`)
-  - 电信：摄像头 → 防爆接线箱 + 防爆挠性管
-  - 电气：防爆灯 → 电力电缆头 + 接线盒
-
-- [x] **向量搜索模块** (`vector_store.py`)
-  - ChromaDB + SQLite 双存储架构
-  - MiniMax Embedding API 集成（代码完成，待额度）
-
-### 进行中
-
-- [ ] **向量索引构建** (因 MiniMax API 余额不足暂停)
-  - 已加载 16,881 条定额数据到 `quota.db`
-  - 待续：在高配计算机上完成向量索引构建
-
-### 待办事项
-
-1. **向量搜索增强**
-   - 使用本地 Embedding 模型（如 sentence-transformers）构建索引
-   - 推荐模型：`all-MiniLM-L6-v2`（轻量，80MB）或 `paraphrase-multilingual-MiniLM-L12-v2`（中文支持）
-
-2. **定额匹配规则完善**
-   - 持续从实际项目中发现并修复规则遗漏的条目
-   - 完善规格型号提取逻辑
-
-3. **测试覆盖**
-   - 更多真实清单格式适配
-   - 边界 case 处理
+**核心价值**：
+- **格式通用** - 自动识别不同公司、不同格式的清单
+- **语义匹配** - 充分理解工作内容，智能匹配正确定额
+- **单位自换** - 自动将清单单位转换为定额标准单位
 
 ---
 
+## 项目结构
 
+```
+quota-matcher/
+├── db/                                    # 数据库文件夹
+│   ├── 河南省通用安装工程预算定额2016.txt   # ⭐ 原始定额数据
+│   ├── quota.db                          # SQLite 元数据库
+│   └── chroma_data/                      # ChromaDB 向量数据库
+│
+├── src/                                   # 源代码
+│   ├── __init__.py
+│   ├── quota_matcher.py                  # 主入口点
+│   ├── quota_loader.py                   # 定额文件加载器
+│   ├── local_matcher.py                  # 本地规则匹配引擎
+│   ├── minimax_matcher.py                # MiniMax AI 语义匹配
+│   ├── vector_store.py                   # 向量存储 (ChromaDB + SQLite)
+│   ├── file_parser.py                    # Excel/Word 文件解析器
+│   ├── column_identifier.py              # 列名智能识别
+│   ├── unit_converter.py                 # 单位换算工具
+│   ├── quantity_extractor.py             # 工程量提取模块
+│   └── claude_matcher.py                 # Claude 集成匹配器
+│
+├── scripts/                               # 工具脚本
+│   ├── build_vector_index.py             # 构建向量索引脚本
+│   └── demo.py                           # 演示脚本
+│
+├── tests/                                # 测试
+│   ├── __init__.py
+│   └── test_quantity_extractor.py
+│
+├── docs/                                  # 文档
+│   └── superpowers/
+│       ├── plans/
+│       └── specs/
+│
+├── .gitignore
+├── skill.json                            # Claude Code skill 配置
+├── requirements.txt                      # Python 依赖
+├── README.md                            # 本文件
+└── CLAUDE.md                            # Claude Code 上下文
+```
 
-## Features
+---
 
-- **Multi-format Support**: Automatically parses Excel (.xlsx/.xls) and Word (.docx) engineering bills
-- **Smart Column Detection**: Intelligently recognizes column names across different companies (项目名称, 设备名称, 材料名称, etc.)
-- **Local Keyword Matching**: High-coverage direct matching using built-in MATERIAL_QUOTA_MAP for common materials and equipment
-- **AI Semantic Enhancement** (optional): Uses MiniMax API for semantic understanding when local matching is uncertain
-- **Automatic Unit Conversion**:
-  - Steel products (angle steel, channel steel, I-beam): meters → kg
-  - Power/control cables: meters → 100m
-- **Quota Rules Compliance**: Follows official quota matching rules (电力电缆 by max single-core cross-section, 控制电缆 by core count)
+## 快速开始
 
-## Supported Quota Categories
-
-| Category | Examples |
-|----------|----------|
-| Steel Conduits | 镀锌钢管, 热镀锌钢管, 防爆钢管, PVC管 |
-| Cable Laying | 电力电缆, 控制电缆, 直埋电缆, 光缆, 网线 |
-| Bridge/Tray | 桥架, 槽式桥架, 梯式桥架 |
-| Junction Boxes | 接线盒, 开关盒, 穿线盒 |
-| Electrical Equipment | 配电箱, 配电柜, UPS, 蓄电池 |
-| Motors | 异步电动机, 防爆电动机 |
-| Lighting | 路灯, 防爆灯, LED灯 |
-| Surveillance | 摄像机, 硬盘录像机, 交换机 |
-| Fire Alarm | 感烟探测器, 火灾报警控制器 |
-| Grounding | 避雷网, 接地母线, 等电位连接 |
-| Ducts/Flexible | 金属软管, 挠性管, 防爆胶泥 |
-
-## Installation
+### 1. 安装依赖
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Dependencies
+### 2. 构建向量数据库
 
-- `openpyxl >= 3.0.0` - Excel read/write
-- `python-docx >= 0.8.11` - Word read/write
-- `requests >= 2.28.0` - HTTP requests (for AI matching)
-
-### Optional: AI Enhancement
-
-Set MiniMax API key for semantic matching (significantly improves accuracy for ambiguous items):
+首次使用需要构建定额向量数据库：
 
 ```bash
-# Linux/Mac
-export MINIMAX_API_KEY=sk-cp-your-key-here
+# 使用本地模型（推荐，无需 API Key）
+python scripts/build_vector_index.py
 
-# Windows (CMD)
-set MINIMAX_API_KEY=sk-cp-your-key-here
-
-# Windows (PowerShell)
-$env:MINIMAX_API_KEY="sk-cp-your-key-here"
+# 使用 MiniMax API（需要 API Key）
+python scripts/build_vector_index.py --api-key YOUR_API_KEY
 ```
 
-Get your API key at: https://platform.minimaxi.com/
-
-## Usage
-
-### Quick Start
+### 3. 使用
 
 ```bash
-# Process Excel bill
-python quota_matcher.py "path/to/bill.xlsx"
+# 处理 Excel 清单
+python -m src.quota_matcher "path/to/bill.xlsx"
 
-# Process Word bill
-python quota_matcher.py "path/to/bill.docx"
+# 处理 Word 清单
+python -m src.quota_matcher "path/to/bill.docx"
 
-# Specify output path
-python quota_matcher.py "input.xlsx" -o "output.xlsx"
+# 指定输出路径
+python -m src.quota_matcher "input.xlsx" -o "output.xlsx"
 ```
 
-### Claude Code Integration
+---
 
-When installed as a Claude Code skill, it triggers automatically on keywords:
+## 核心模块
+
+### FileParser - 多格式文件解析
+
+解析不同公司的工程量清单，支持：
+- Excel (.xlsx / .xls)
+- Word (.docx)
+- 自动识别列结构（项目名称、设备名称、材料名称等）
+- 智能合并多行条目
+
+### QuantityExtractor - 工程量提取
+
+从清单中提取工程量，支持：
+- **显性工程量**：直接从表格提取
+- **隐性工程量**：从描述文本中解析
+- **附表明细**：识别并处理附表中的详细规格
+
+### VectorStore - 向量数据库
+
+基于 ChromaDB + SQLite 的向量知识库：
+- 定额条目全部向量化存储
+- 语义相似度搜索
+- 支持本地模型或 API 生成向量
+
+### Matcher - 定额匹配
+
+**匹配策略**（语义为主，规则为辅）：
+1. 语义理解工作内容
+2. 向量搜索候选定额
+3. 规则精确匹配兜底
+4. 返回最佳匹配结果
+
+### UnitConverter - 单位换算
+
+自动将清单单位转换为定额标准单位：
+- 钢材（角钢、槽钢、工字钢）：米 → 千克
+- 电缆（电力/控制）：米 → 100米
+- 其他常用单位换算
+
+---
+
+## 定额匹配流程
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     输入：工程量清单                          │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│  FileParser - 解析文件                                        │
+│  - 识别文件格式（Excel/Word/PDF）                            │
+│  - 识别列结构（名称/规格/数量/单位）                          │
+│  - 提取原始工程量数据                                          │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│  QuantityExtractor - 工程量提取                               │
+│  - 显性工程量：直接读取表格数据                                │
+│  - 隐性工程量：正则解析描述文本                                │
+│  - 规格识别：提取型号、规格参数                                │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│  Matcher - 定额匹配                                           │
+│                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐                │
+│  │  Vector Search   │    │  Rule Matcher   │                │
+│  │  (语义搜索)      │    │  (规则兜底)     │                │
+│  └────────┬────────┘    └────────┬────────┘                │
+│           │                      │                         │
+│           └──────────┬───────────┘                         │
+│                      ▼                                      │
+│            ┌─────────────────┐                             │
+│            │  置信度评估      │                             │
+│            │  高/中/低/待确认  │                             │
+│            └────────┬────────┘                             │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│  UnitConverter - 单位换算                                     │
+│  - 清单单位 → 定额标准单位                                    │
+│  - 计算与定额单位匹配的工程量                                  │
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│  输出：广联达Excel                                            │
+│  - 定额编号 / 项目名称 / 工程量 / 单位                         │
+│  - 可直接导入广联达预算软件                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 向量数据库说明
+
+### 为什么使用向量搜索？
+
+传统规则匹配的问题：
+- 换一份清单格式可能需要修改代码
+- 无法处理表述差异但实质相同的工作内容
+- 300+ 映射规则难以维护和扩展
+
+向量搜索的优势：
+- **语义理解**："安装防爆摄像头" 能匹配 "安装防爆摄像机"
+- **零规则维护**：新增定额只需重建索引
+- **通用适配**：不同公司的表述习惯都能正确理解
+
+### 构建定额知识库
+
+将河南省2016安装工程预算定额中的每一条定额：
+1. 解析工作内容描述
+2. 生成语义向量
+3. 存储到向量数据库
+
+匹配时，输入工作内容描述，检索最相似的定额。
+
+---
+
+## 输出格式
+
+生成的 Excel 文件可直接导入广联达预算软件：
+
+| 序号 | 定额编号 | 定额名称 | 单位 | 工程量表达式 | 工程量 | 匹配方式 | 备注 |
+|------|----------|----------|------|-------------|--------|----------|------|
+| 1 | 4-9-165 | 室内敷设电力电缆 铜芯... | 100m | 5 | 500m | 精确匹配 | YJV-4×240+1×120 |
+
+**工程量表达式与定额单位的关系**：
+- **工程量表达式列**：填入识别到的原始工程量，或长度单位换算成 kg/ton 后的工程量（如 500 表示识别到 500米）
+- **工程量列**：表达式 ÷ 定额单位倍数（如 500 ÷ 100m = 5）
+
+---
+
+## Claude Code 集成
+
+当安装为 Claude Code skill 时，自动识别以下关键词：
 
 - "为xx清单匹配定额"
 - "做一下x清单预算"
@@ -133,25 +255,27 @@ When installed as a Claude Code skill, it triggers automatically on keywords:
 - "工程量清单套定额"
 - "这份清单套一下定额"
 
-### Standalone Python Usage
+---
+
+## Python API
 
 ```python
-from quota_loader import QuotaLoader
-from local_matcher import LocalMatcher
+from src.quota_loader import QuotaLoader
+from src.local_matcher import LocalMatcher
 
-# Load quota data
-loader = QuotaLoader()
+# 加载定额数据
+loader = QuotaLoader(quota_file="db/河南省通用安装工程预算定额2016.txt")
 quotas = loader.load()
 
-# Create matcher (use_websearch=False for local-only)
+# 创建匹配器
 matcher = LocalMatcher(quotas, use_websearch=False)
 
-# Match a single item
+# 单条匹配
 result = matcher.match("电力电缆4×25+1×16", quantity=100, unit="m")
 print(result)
 # {'code': '4-9-161', 'name': '室内敷设电力电缆 铜芯...', 'unit': '100m', 'confidence': 'high', ...}
 
-# Batch match
+# 批量匹配
 items = [
     {"name": "镀锌钢管DN25", "quantity": 50, "unit": "m"},
     {"name": "控制电缆10×1.5", "quantity": 200, "unit": "m"},
@@ -159,120 +283,41 @@ items = [
 results = matcher.batch_match(items)
 ```
 
-## Output Format
+---
 
-Generated Excel with columns:
+## 开发指南
 
-| 列名 | 说明 |
-|------|------|
-| 序号 | Row number |
-| 施工内容 | Original item name from bill |
-| 定额编号 | Matched quota code |
-| 定额名称 | Quota item name |
-| 单位 | Quota standard unit |
-| 工程量 | Matched quantity |
-| 匹配方式 | 精确匹配/模糊匹配/待人工确认 |
-| 备注 | Match notes, unit conversion info |
+### 克隆仓库后初始化
 
-## Quota Matching Rules
-
-### Power Cables (电力电缆)
-
-Match by **maximum single-core cross-section**:
-
-| Cable | Rule | Example |
-|-------|------|---------|
-| 4×25+1×16 | max core = 25mm² | → 4-9-161 (≤35mm²) |
-| 4×240+1×120 | max core = 240mm² | → 4-9-165 (≤240mm²) |
-
-### Control Cables (控制电缆)
-
-Match by **total core count**:
-
-| Cable | Rule | Example |
-|-------|------|---------|
-| 10×1.5 | 10 cores | → 4-9-311 (≤14芯) |
-| 24×1.5 | 24 cores | → 4-9-312 (≤24芯) |
-
-### Coefficient Notes
-
-Quota items are priced for standard conditions. When actual conditions differ, apply coefficients:
-
-- **5-core power cable laying**: ×1.3 (base quota is 3-core)
-- **6-core power cable laying**: ×1.6 (base quota is 3-core)
-- **Copper cable terminal (vs aluminum)**: ×1.2
-- **5-core cable terminal (vs 3-core)**: ×1.2
-
-These coefficients are applied manually during billing, not automatically.
-
-## File Structure
-
-```
-quota-matcher/
-├── skill.json              # Claude Code skill config
-├── quota_matcher.py        # Main entry point
-├── quota_loader.py         # Quota file loader
-├── local_matcher.py        # Local keyword matching
-├── minimax_matcher.py      # AI semantic matching
-├── file_parser.py          # Excel/Word parser
-├── column_identifier.py    # Column name detection
-├── unit_converter.py       # Unit conversion
-├── vector_store.py         # Vector database (ChromaDB + SQLite)
-├── doc_to_docx.py          # .doc to .docx converter
-├── quantity_extractor.py   # Engineering quantity extraction
-├── requirements.txt        # Python dependencies
-├── .gitignore              # Git ignore rules
-└── README.md               # This file
+```bash
+git clone https://github.com/Mr-Hu9595/quota-matcher.git
+cd quota-matcher
+pip install -r requirements.txt
 ```
 
-### 在新机器上继续开发
+### 运行测试
 
-1. **克隆仓库**
-   ```bash
-   git clone https://github.com/Mr-Hu9595/quota-matcher.git
-   cd quota-matcher
-   ```
-
-2. **安装依赖**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **安装向量模型（可选，用于本地向量搜索）**
-   ```bash
-   pip install sentence-transformers
-   ```
-
-4. **构建向量索引**（可选）
-   ```python
-   import os
-   from quota_loader import QuotaLoader
-   from vector_store import VectorStore
-
-   # 使用本地模型（推荐）
-   vs = VectorStore(embedding_model="local")
-   vs.build_index(quotas)
-   ```
-
-## Quota Data File
-
-The tool requires the quota data file: `河南省通用安装工程预算定额2016.txt`
-
-Place the quota file in the parent directory of the project:
-
-```
-your-project/
-├── quota-matcher/          # This project
-└── 河南省通用安装工程预算定额2016.txt
+```bash
+python -m pytest tests/ -v
 ```
 
-The quota file format (tab-separated):
+### 构建向量索引
 
+```bash
+python scripts/build_vector_index.py
 ```
-1-1-1    台式及仪表机床 设备重量0.3t以内    台    518.97
-1-1-2    台式及仪表机床 设备重量0.5t以内    台    672.15
-...
-```
+
+---
+
+## 依赖
+
+- `openpyxl >= 3.0.0` - Excel 读写
+- `python-docx >= 0.8.11` - Word 读写
+- `requests >= 2.28.0` - HTTP 请求（用于 AI 匹配）
+- `chromadb >= 0.4.0` - 向量数据库（可选）
+- `sentence-transformers` - 本地 Embedding 模型（可选）
+
+---
 
 ## License
 
