@@ -316,7 +316,7 @@ class LocalMatcher:
         "系统软件": "5-1-116",
     }
 
-    def __init__(self, quota_data: List[Dict], use_websearch: bool = True):
+    def __init__(self, quota_data: List[Dict], use_websearch: bool = False):
         """初始化本地匹配器"""
         self.quota_data = quota_data
         self.all_codes = [q["code"] for q in quota_data]
@@ -497,9 +497,13 @@ class LocalMatcher:
             ("诱导灯 壁装", "4-14-156"),
             ("防尘防水灯 直杆式", "4-14-218"),
             ("防尘防水灯 弯杆式", "4-14-219"),
-            ("防爆灯", "4-14-236"),
+            ("防爆灯", "4-14-235"),
             ("防爆灯 直杆式", "4-14-236"),
             ("防爆灯 弯杆式", "4-14-237"),
+            ("防爆弯灯", "4-14-235"),
+            ("防爆平台灯", "4-14-235"),
+            ("防爆平台灯（法兰式）", "4-14-235"),
+            ("防爆平台灯（护栏式）", "4-14-235"),
             ("防爆LED灯", "4-14-240"),
             ("防爆荧光灯", "4-14-240"),
             ("LED灯", "4-14-240"),
@@ -569,7 +573,8 @@ class LocalMatcher:
             ("动力箱", "4-2-74"),
             ("开关箱", "4-2-76"),
             ("同步电动机检查接线", "4-6-22"),
-            ("角钢", "3-6-60"),
+            ("角钢", "4-7-5"),  # 制作
+            ("角钢 安装", "4-7-6"),  # 安装
             # ========== 配电箱/操作柱 ==========
             ("操作柱", "4-2-75"),
             ("路灯接线箱", "4-2-75"),
@@ -604,9 +609,11 @@ class LocalMatcher:
             ("硬盘录像机", "5-1-34"),
             ("数字硬盘录像机", "5-1-34"),
             ("监视器", "5-1-18"),
+            ("防爆摄像机", "5-6-82"),  # 防爆摄像机（通用）
+            ("防爆固定摄像机", "5-6-82"),  # 防爆枪式摄像机
+            ("监控摄像设备 防爆摄像机", "5-6-82"),  # 完整名称匹配
             ("摄像机", "5-6-78"),
             ("监控摄像机", "5-6-78"),
-            ("防爆摄像机", "5-6-82"),
             ("枪机", "5-6-83"),
             ("半球摄像机", "5-6-79"),
             ("球型摄像机", "5-6-80"),
@@ -643,6 +650,9 @@ class LocalMatcher:
             # ========== 等电位连接 ==========
             ("等电位连接", "5-7-65"),
             ("接地汇流排", "5-7-63"),
+            ("黄绿接地线", "5-7-65"),  # 黄绿双色接地线用于等电位连接
+            ("黄绿双色线", "5-7-65"),
+            ("防爆接线箱", "4-13-170"),  # 防爆接线箱 明装 半周长≤700mm
             # ========== 测试 ==========
             ("光纤链路测试", "11-8-49"),
             ("光纤链路衰减测试", "11-8-49"),
@@ -712,7 +722,7 @@ class LocalMatcher:
         # 提取截面 (如 10mm², 16mm², 截面≤10mm², 截面积≤120mm²)
         section_match = re.search(r'截[面积]*[≤\s]*(\d+)\s*mm', item_lower, re.IGNORECASE)
         # 从"n×m"格式提取电力电缆**最大单芯截面**，如"4×25+1×16"→取max(25,16)=25mm²
-        power_cable_match = re.findall(r'(\d+)\s*[×x]\s*(\d+)', item_lower)
+        power_cable_match = re.findall(r'(\d+)\s*[×x]\s*(\d+(?:\.\d+)?)', item_lower)
         # 从"n×m"格式提取控制电缆**芯数**（所有芯数之和），如"10×1.5"→10芯
         ctrl_cable_core_match = re.findall(r'(\d+)\s*[×x]\s*(\d+(?:\.\d+)?)', item_lower)
 
@@ -785,15 +795,15 @@ class LocalMatcher:
                             if quota:
                                 return {"code": quota["code"], "name": quota["name"], "unit": quota["unit"], "confidence": "high", "note": f"精确匹配（控制电缆{cores}芯）", "need_confirm": False}
         elif "电力电缆" in item_lower or "电力电缆敷设" in item_lower or \
-             re.search(r'(wdz-?yjz?|yjv|yv|vv|yv22|yv32|vv22|vv32)[-_\d]*\d+[×x]\d+', item_lower):
+             re.search(r'(nh|zra|wdz|yjv|yv|vv|yv22|yv32|vv22|vv32)[-_]?.*?(\d+)[×x](\d+)', item_lower, re.IGNORECASE):
             # ★ 电力电缆选用规则（综合解释第四册）：
             #   定额按三芯编制，五芯×1.15、六芯×1.3、每增一芯+15%
             #   电力电缆按"最大单芯截面"选择定额编号
             cable_map = self.MATERIAL_QUOTA_MAP.get("电力电缆", {})
             # 计算**最大单芯截面**：4×25+1×16 → max(25,16)=25mm²（按最大单芯套定额）
             if power_cable_match:
-                # 取所有芯中的最大截面
-                section = max(int(m) for n, m in power_cable_match)
+                # 取所有芯中的最大截面（支持小数，如2.5mm²）
+                section = max(float(m) for n, m in power_cable_match)
                 for key, code in cable_map.items():
                     if "≤" in key and "kV" not in key:
                         max_val = int(re.search(r'(\d+)', key).group(1))
