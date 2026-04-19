@@ -26,6 +26,7 @@ from quota_loader import QuotaLoader
 from file_parser import FileParser
 from minimax_matcher import MiniMaxMatcher
 from local_matcher import LocalMatcher
+from quantity_extractor import QuantityExtractor
 
 
 class QuotaMatcher:
@@ -39,6 +40,7 @@ class QuotaMatcher:
         self.use_local = use_local
         self.use_vector = use_vector
         self.vector_store = None
+        self.quantity_extractor = QuantityExtractor()
 
     def load_quota_data(self):
         """加载定额数据"""
@@ -113,16 +115,27 @@ class QuotaMatcher:
         if self.quota_data is None:
             self.load_quota_data()
 
+        # 2.5 工程量识别（新增）
+        print("\n[2.5/5] 正在识别工程量...")
+        for item in parse_result.items:
+            # 设置默认source（如果来自附表会由StructuredTableExtractor处理）
+            if "source" not in item:
+                item["source"] = item.get("sheet", "")  # sheet包含"附表"则source为table
+
+        enhanced_items = self.quantity_extractor.extract(parse_result.items)
+        parse_result.items = enhanced_items
+        print(f"工程量识别完成，{len(enhanced_items)} 项")
+
         # 3. AI匹配
-        print("\n[2/4] 正在AI匹配定额（此过程需要联网）...")
+        print("\n[3/5] 正在AI匹配定额（此过程需要联网）...")
         results = self.matcher.batch_match(parse_result.items)
 
         # 4. 生成输出Excel
-        print("\n[3/4] 正在生成输出Excel...")
+        print("\n[4/5] 正在生成输出Excel...")
         self._write_output(results, output_path)
 
         # 5. 统计
-        print("\n[4/4] 处理完成！")
+        print("\n[5/5] 处理完成！")
         self._print_statistics(results)
 
         return str(output_path)
