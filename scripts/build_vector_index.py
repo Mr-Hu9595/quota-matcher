@@ -92,7 +92,7 @@ def main():
 
     # 验证
     if vs.has_index():
-        print(f"\n✓ 向量索引构建成功！")
+        print(f"\n[OK] 向量索引构建成功！")
         print(f"  - SQLite: {db_path}")
         print(f"  - ChromaDB: {chroma_path}")
         print(f"  - 定额数量: {len(quotas)}")
@@ -103,7 +103,7 @@ def main():
         for r in results:
             print(f"  - {r.get('code')}: {r.get('name')} ({r.get('unit')})")
     else:
-        print("\n✗ 向量索引构建失败，请检查错误信息")
+        print("\n[FAIL] 向量索引构建失败，请检查错误信息")
 
 
 if __name__ == "__main__":

@@ -29,9 +29,9 @@ class VectorStore:
             chroma_path: ChromaDB数据目录，默认在skill目录下
         """
         if db_path is None:
-            db_path = Path(__file__).parent / "quota.db"
+            db_path = Path(__file__).parent.parent / "db" / "quota.db"
         if chroma_path is None:
-            chroma_path = Path(__file__).parent / "chroma_data"
+            chroma_path = Path(__file__).parent.parent / "db" / "chroma_data"
 
         self.db_path = str(db_path)
         self.chroma_path = str(chroma_path)
@@ -42,12 +42,12 @@ class VectorStore:
             print("请运行: pip install chromadb")
             return
 
-        # 初始化ChromaDB客户端
+        # 初始化ChromaDB客户端（持久化）
         os.makedirs(self.chroma_path, exist_ok=True)
-        self.chroma_client = chromadb.Client(Settings(
-            persist_directory=self.chroma_path,
-            anonymized_telemetry=False
-        ))
+        self.chroma_client = chromadb.PersistentClient(
+            path=self.chroma_path,
+            settings=Settings(anonymized_telemetry=False)
+        )
 
         # 获取或创建collection
         self.collection_name = "quota_embeddings"
@@ -240,14 +240,17 @@ class VectorStore:
         return None
 
     def _get_local_embedding(self, text: str) -> Optional[List[float]]:
-        """使用本地 sentence-transformers 模型生成向量"""
+        """使用本地 sentence-transformers 模型生成向量（模型只加载一次）"""
         try:
             from sentence_transformers import SentenceTransformer
 
-            # 使用轻量中文模型
-            model_name = "paraphrase-multilingual-MiniLM-L12-v2"
-            model = SentenceTransformer(model_name)
-            embedding = model.encode(text, convert_to_numpy=True)
+            # 类级别缓存模型，避免重复加载
+            if not hasattr(self.__class__, '_local_model'):
+                print("  首次使用，加载本地模型...")
+                self.__class__._local_model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+                print("  模型加载完成")
+
+            embedding = self.__class__._local_model.encode(text, convert_to_numpy=True)
             return embedding.tolist()
 
         except ImportError:
