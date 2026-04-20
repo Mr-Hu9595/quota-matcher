@@ -107,8 +107,9 @@ class DescriptiveExtractor:
         return self._ai_parser
 
     def _init_patterns(self) -> List[Dict]:
-        """初始化正则表达式模式库"""
+        """初始化正则表达式模式库 - 基于广联达Excel样板扩展"""
         return [
+            # ========== 电力电缆 ==========
             # 电力电缆：YJV-4×240+1×120 500米 或 YJV-4×240+1×120（无数量）
             {
                 "pattern": r'(YJV[^-]*[-]?\d+×\d+(\+\d+×\d+)*)(?:\s+(?:共计|共|合计)?\s*(\d+(?:\.\d+)?)\s*(米|m))?',
@@ -117,6 +118,23 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 3
             },
+            # 电力电缆简短表达：3*70+1*35 500米
+            {
+                "pattern": r'(\d+×\d+(\+\d+×\d+)*)\s*电力电缆\s*(\d+(?:\.\d+)?)\s*(米|m)',
+                "name_template": "电力电缆 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 3
+            },
+            # 电力电缆仅规格+数量：4*10 200米
+            {
+                "pattern": r'(\d+×\d+(\+\d+×\d+)?)\s+(\d+(?:\.\d+)?)\s*(?:米|m)',
+                "name_template": "电力电缆 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 3
+            },
+            # ========== 控制电缆 ==========
             # 控制电缆：KJV-10×1.5 200米 或 KJV-10×1.5（无数量）
             {
                 "pattern": r'(KJV[^-]*[-]?\d+×\d+(\+\d+×\d+)*)(?:\s+(?:共计|共|合计)?\s*(\d+(?:\.\d+)?)\s*(米|m))?',
@@ -125,6 +143,23 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 3
             },
+            # 控制电缆简短表达：10*1.5 200米
+            {
+                "pattern": r'(\d+×\d+(\+\d+×\d+)*)\s*(?:控制电缆)?\s*(\d+(?:\.\d+)?)\s*(?:米|m)',
+                "name_template": "控制电缆 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 控制电缆芯数规格：电缆芯数≤6芯
+            {
+                "pattern": r'(电缆芯数≤?\d+芯)\s*(\d+(?:\.\d+)?)\s*(米|m)',
+                "name_template": "控制电缆 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 接地跨接线 ==========
             # 接地跨接线：4mm²接地跨接黄绿双色线 100米
             {
                 "pattern": r'(\d+mm²)\s*接地跨接.*?(\d+(?:\.\d+)?)\s*(米|m)',
@@ -133,7 +168,8 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 2
             },
-            # 钢管：DN80热镀锌钢管 150米
+            # ========== 钢管 ==========
+            # 热镀锌钢管 DN80 150米
             {
                 "pattern": r'(DN\d+)\s*热镀锌钢管\s*(\d+(?:\.\d+)?)\s*(米|m)',
                 "name_template": "热镀锌钢管 {spec}",
@@ -141,7 +177,57 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 2
             },
-            # 槽钢：10#热镀锌槽钢 50米
+            # DN50热镀锌钢管 100米
+            {
+                "pattern": r'(DN\d+)\s*(\d+(?:\.\d+)?)\s*(?:米|m)',
+                "name_template": "热镀锌钢管 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 镀锌钢管敷设 DN≤50
+            {
+                "pattern": r'镀锌钢管敷设\s*(DN≤?\d+)\s*(\d+(?:\.\d+)?)\s*(10m|米|m)',
+                "name_template": "镀锌钢管敷设 {spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 防爆钢管敷设 DN≤25
+            {
+                "pattern": r'防爆钢管敷设\s*(DN≤?\d+)\s*(\d+(?:\.\d+)?)\s*(10m|米|m)',
+                "name_template": "防爆钢管敷设 {spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 镀锌钢管 暗配 DN≤20
+            {
+                "pattern": r'(DN≤?\d+)\s*镀锌钢管.*?(\d+(?:\.\d+)?)\s*(10m|米|m)',
+                "name_template": "镀锌钢管 {spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 桥架 ==========
+            # 钢制梯式桥架安装 宽+高≤800mm
+            {
+                "pattern": r'(宽\+高≤\d+mm)\s*桥架.*?(\d+(?:\.\d+)?)\s*(10m|米|m)',
+                "name_template": "钢制梯式桥架安装 {spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 桥架支撑架制作
+            {
+                "pattern": r'(电缆桥架支撑架制作)\s*(\d+(?:\.\d+)?)\s*(kg|个|套)',
+                "name_template": "{spec}",
+                "unit": "kg",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 槽钢 ==========
+            # 10#热镀锌槽钢 50米
             {
                 "pattern": r'(10#)\s*热镀锌槽钢\s*(\d+(?:\.\d+)?)\s*(米|m)',
                 "name_template": "热镀锌槽钢 {spec}",
@@ -149,7 +235,16 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 2
             },
-            # 角钢：∠40*40*4热镀锌角钢 30米
+            # 槽钢 10# 30米
+            {
+                "pattern": r'(10#)\s*槽钢\s*(\d+(?:\.\d+)?)\s*(米|m)',
+                "name_template": "槽钢 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 角钢 ==========
+            # ∠40*40*4热镀锌角钢 30米
             {
                 "pattern": r'(∠\d+[*×\d]+)\s*热镀锌角钢\s*(\d+(?:\.\d+)?)\s*(米|m)',
                 "name_template": "热镀锌角钢 {spec}",
@@ -157,7 +252,16 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 2
             },
-            # 摄像头立柱：3.5米摄像头立柱 10套
+            # 角钢 ∠40×40×4 50米
+            {
+                "pattern": r'(∠\d+[×*]\d+[×*]\d+)\s*(\d+(?:\.\d+)?)\s*(米|m)',
+                "name_template": "角钢 {spec}",
+                "unit": "米",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 摄像头立柱 ==========
+            # 3.5米摄像头立柱 10套
             {
                 "pattern": r'(\d+\.?\d*)\s*米\s*摄像头立柱\s*(\d+(?:\.\d+)?)\s*(套|个|台)',
                 "name_template": "摄像头立柱 高度{height}米",
@@ -166,7 +270,16 @@ class DescriptiveExtractor:
                 "qty_group": 2,
                 "height_capture": True
             },
-            # 防爆接线盒
+            # 摄像头立柱 高度3.5m 10套
+            {
+                "pattern": r'摄像头立柱\s*高度?(\d+\.?\d*)\s*(?:米|m)?\s*(\d+(?:\.\d+)?)\s*(套|个|台)',
+                "name_template": "摄像头立柱 高度{height}米",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2,
+                "height_capture": True
+            },
+            # ========== 防爆接线盒 ==========
             {
                 "pattern": r'防爆接线盒\s*(\d+(?:\.\d+)?)\s*(个)',
                 "name_template": "防爆接线盒",
@@ -174,7 +287,15 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 1
             },
-            # 三防接线盒
+            # 明装防爆接线盒安装
+            {
+                "pattern": r'明装防爆接线盒安装\s*(\d+(?:\.\d+)?)\s*(个)',
+                "name_template": "明装防爆接线盒安装",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 1
+            },
+            # ========== 三防接线盒 ==========
             {
                 "pattern": r'三防接线盒\s*(\d+(?:\.\d+)?)\s*(个)',
                 "name_template": "三防接线盒",
@@ -182,7 +303,7 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 1
             },
-            # 防爆活接头
+            # ========== 防爆活接头 ==========
             {
                 "pattern": r'防爆活接头\s*(\d+(?:\.\d+)?)\s*(个)',
                 "name_template": "防爆活接头",
@@ -190,11 +311,419 @@ class DescriptiveExtractor:
                 "spec_group": 1,
                 "qty_group": 1
             },
-            # 钢板：200*200*8mm钢板 15块
+            # ========== 钢板 ==========
+            # 200*200*8mm钢板 15块
             {
                 "pattern": r'(\d+[*×]\d+[*×]\d+mm)\s*钢板\s*(\d+(?:\.\d+)?)\s*(块|吨)',
                 "name_template": "钢板 {spec}",
                 "unit": "块",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 普通钢板 δ=8mm
+            {
+                "pattern": r'普通钢板\s*δ?=?(\d+mm)\s*(\d+(?:\.\d+)?)\s*(kg|吨|t)',
+                "name_template": "普通钢板 δ={spec}",
+                "unit": "kg",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 铁构件 ==========
+            # 一般铁构件制作
+            {
+                "pattern": r'(一般铁构件制作|一般铁构件安装)\s*(\d+(?:\.\d+)?)\s*(kg|个)',
+                "name_template": "{spec}",
+                "unit": "kg",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 电缆桥架支撑架
+            {
+                "pattern": r'(电缆桥架支撑架)\s*(\d+(?:\.\d+)?)\s*(kg|套)',
+                "name_template": "{spec}",
+                "unit": "kg",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 基础槽钢制作、安装
+            {
+                "pattern": r'(基础槽钢制作|基础槽钢安装)\s*(\d+(?:\.\d+)?)\s*(m|米)',
+                "name_template": "{spec}",
+                "unit": "m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 接地系统 ==========
+            # 接地极(板)制作与安装 圆钢接地极
+            {
+                "pattern": r'接地极.*?(圆钢接地极|接地极板)\s*(\d+(?:\.\d+)?)\s*(根|个)',
+                "name_template": "接地极制作与安装 {spec}",
+                "unit": "根",
+                "spec_group": 2,
+                "qty_group": 2
+            },
+            # 接地母线敷设
+            {
+                "pattern": r'(户内接地母线敷设|户外接地母线敷设)\s*(\d+(?:\.\d+)?)\s*(m|米)',
+                "name_template": "{spec}",
+                "unit": "m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 接地模块安装
+            {
+                "pattern": r'接地模块安装\s*(\d+(?:\.\d+)?)\s*(个|套)',
+                "name_template": "接地模块安装",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 1
+            },
+            # 接地系统测试
+            {
+                "pattern": r'接地系统测试\s*(\d+(?:\.\d+)?)\s*(系统|次)',
+                "name_template": "接地系统测试",
+                "unit": "系统",
+                "spec_group": 1,
+                "qty_group": 1
+            },
+            # 铜接地绞线敷设
+            {
+                "pattern": r'(户外铜接地绞线敷设)\s*(\d+(?:\.\d+)?)\s*(m|米)',
+                "name_template": "{spec}",
+                "unit": "m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 电缆终端头 ==========
+            # 电力电缆终端头制作安装 1kV以下室内干包式铜芯电力电缆 4*10
+            {
+                "pattern": r'(电力电缆终端头制作安装.*?(?:4\*\d+|截面≤\d+mm\d*))\s*(\d+(?:\.\d+)?)\s*(个)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 电力电缆终端头 10kV室内热(冷)缩式
+            {
+                "pattern": r'(电力电缆终端头制作安装.*?热[冷]缩式.*?(?:截面≤?\d+mm\d*)?)\s*(\d+(?:\.\d+)?)\s*(个)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 控制电缆终端头制作安装
+            {
+                "pattern": r'(控制电缆终端头制作安装.*?芯数≤?\d+)\s*(\d+(?:\.\d+)?)\s*(个)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 电机检查/调试 ==========
+            # 交流异步电动机检查接线 功率≤13kW
+            {
+                "pattern": r'(交流异步电动机检查接线.*?功率≤?\d+[kK]?W)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 交流防爆电动机检查接线
+            {
+                "pattern": r'(交流防爆电动机检查接线.*?(?:功率≤?\d+[kK]?W)?)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 交流同步电动机检查接线
+            {
+                "pattern": r'(交流同步电动机检查接线)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 大中型电动机检查接线
+            {
+                "pattern": r'(大中型电动机检查接线.*?重量≤?\d+t)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 电动机负载调试
+            {
+                "pattern": r'(交流异步电动机负载调试.*?功率≤?\d+[kK]?W)\s*(\d+(?:\.\d+)?)\s*(台|系统)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 变频调速电动机负载调试
+            {
+                "pattern": r'(交流变频调速电动机负载调试)\s*(\d+(?:\.\d+)?)\s*(台|系统)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 配电箱/柜 ==========
+            # 成套配电箱安装 半周长0.5m
+            {
+                "pattern": r'(成套配电箱安装.*?半周长\d+\.?\d*m)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 低压成套配电柜安装
+            {
+                "pattern": r'(低压成套配电柜安装)\s*(\d+(?:\.\d+)?)\s*(台|面)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 落地式配电箱安装
+            {
+                "pattern": r'(成套配电箱安装.*?落地式)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== UPS/蓄电池 ==========
+            # UPS安装 三相不间断电源 ≤100kV·A
+            {
+                "pattern": r'(UPS安装.*?(?:容量|功率)≤?\d+[kK]?V·A)\s*(\d+(?:\.\d+)?)\s*(台|套)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 密封式铅酸蓄电池安装
+            {
+                "pattern": r'(密封式铅酸蓄电池安装.*?容量≤?\d+[A·]?h)\s*(\d+(?:\.\d+)?)\s*(个|组|套)',
+                "name_template": "{spec}",
+                "unit": "组",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 蓄电池组充放电
+            {
+                "pattern": r'(蓄电池组充放电.*?电压≤?\d+V.*?容量≤?\d+[A·]?h)\s*(\d+(?:\.\d+)?)\s*(组|次)',
+                "name_template": "{spec}",
+                "unit": "组",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 路灯 ==========
+            # 防爆路灯安装
+            {
+                "pattern": r'(防爆路灯安装.*?臂长[<>]?\d+\.?\d*m)\s*(\d+(?:\.\d+)?)\s*(套|个)',
+                "name_template": "{spec}",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 单臂悬挑灯架路灯安装
+            {
+                "pattern": r'(单臂悬挑灯架路灯安装.*?臂长[<>]?\d+\.?\d*m)\s*(\d+(?:\.\d+)?)\s*(套|个)',
+                "name_template": "{spec}",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 高杆灯架路灯安装
+            {
+                "pattern": r'(高杆灯架路灯安装.*?灯高≤?\d+m.*?灯火数≤?\d+火)\s*(\d+(?:\.\d+)?)\s*(套|个)',
+                "name_template": "{spec}",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 路灯金属杆安装 单杆 杆长≤10m
+            {
+                "pattern": r'(路灯金属杆安装.*?杆长≤?\d+m)\s*(\d+(?:\.\d+)?)\s*(根|套)',
+                "name_template": "{spec}",
+                "unit": "根",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 照明灯具 ==========
+            # 密封灯具安装 防爆灯 弯杆式
+            {
+                "pattern": r'(密封灯具安装.*?(?:防爆灯|弯杆式|吸顶式))\s*(\d+(?:\.\d+)?)\s*(套|个)',
+                "name_template": "{spec}",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 标志、诱导装饰灯具安装
+            {
+                "pattern": r'(标志、诱导装饰灯具安装.*?(?:墙壁式|吊杆式|嵌入式))\s*(\d+(?:\.\d+)?)\s*(套|个)',
+                "name_template": "{spec}",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 穿线/布线 ==========
+            # 穿照明线 铜芯 导线截面≤2.5mm2
+            {
+                "pattern": r'(穿照明线.*?导线截面≤?\d+\.?\d*mm2)\s*(\d+(?:\.\d+)?)\s*(m|米|100m)',
+                "name_template": "{spec}",
+                "unit": "100m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 压铜接线端子
+            {
+                "pattern": r'(压铜接线端子.*?导线截面≤?\d+mm2)\s*(\d+(?:\.\d+)?)\s*(个|套)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 电缆防火 ==========
+            # 防火包安装
+            {
+                "pattern": r'(防火包安装)\s*(\d+(?:\.\d+)?)\s*(个|处|m|米)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 防火堵料
+            {
+                "pattern": r'(防火堵料)\s*(\d+(?:\.\d+)?)\s*(kg|处|m|米)',
+                "name_template": "{spec}",
+                "unit": "kg",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 防火涂料
+            {
+                "pattern": r'(防火涂料)\s*(\d+(?:\.\d+)?)\s*(kg|m|米)',
+                "name_template": "{spec}",
+                "unit": "kg",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 自动投入装置 ==========
+            # 备用电源自动投入装置
+            {
+                "pattern": r'(备用电源自动投入装置|自动投入装置系统调试)\s*(\d+(?:\.\d+)?)\s*(套|系统)',
+                "name_template": "{spec}",
+                "unit": "套",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 不间断电源调试 ==========
+            {
+                "pattern": r'(不间断电源.*?容量≤?\d+[kK]?V·A)\s*(\d+(?:\.\d+)?)\s*(系统|套)',
+                "name_template": "{spec}",
+                "unit": "系统",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 阀门检查接线 ==========
+            # 多通电动阀
+            {
+                "pattern": r'(阀门检查接线.*?(?:多通电动阀|电动阀))\s*(\d+(?:\.\d+)?)\s*(个|台)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 避雷装置 ==========
+            # 避雷引下线敷设 断接卡子制作安装
+            {
+                "pattern": r'(避雷引下线敷设.*?断接卡子制作安装)\s*(\d+(?:\.\d+)?)\s*(个|套)',
+                "name_template": "{spec}",
+                "unit": "个",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 避雷网安装
+            {
+                "pattern": r'(避雷网安装.*?(?:沿折板支架敷设|平屋顶))\s*(\d+(?:\.\d+)?)\s*(m|米|套)',
+                "name_template": "{spec}",
+                "unit": "m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 等电位连接 ==========
+            # 等电位连接 地网600*600(mm2)
+            {
+                "pattern": r'(等电位连接.*?地网\d+[*×]\d+\(?mm2\)?)\s*(\d+(?:\.\d+)?)\s*(m2|平方米|处)',
+                "name_template": "{spec}",
+                "unit": "m2",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 电动葫芦 ==========
+            {
+                "pattern": r'(电动葫芦电气安装.*?起重量≤?\d+t)\s*(\d+(?:\.\d+)?)\s*(台|套)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 励磁屏 ==========
+            {
+                "pattern": r'(励磁、灭磁、充电馈线屏安装.*?(?:蓄电池屏|柜))\s*(\d+(?:\.\d+)?)\s*(台|面|套)',
+                "name_template": "{spec}",
+                "unit": "台",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 刚性阻燃管/半硬质塑料管 ==========
+            # 刚性阻燃管敷设 外径50mm
+            {
+                "pattern": r'(刚性阻燃管敷设.*?外径\d+mm)\s*(\d+(?:\.\d+)?)\s*(10m|m)',
+                "name_template": "{spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # 半硬质塑料管敷设 外径50mm
+            {
+                "pattern": r'(半硬质塑料管敷设.*?外径\d+mm)\s*(\d+(?:\.\d+)?)\s*(10m|m)',
+                "name_template": "{spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 直埋式电力电缆 ==========
+            {
+                "pattern": r'(直埋式电力电缆敷设.*?截面≤?\d+mm2)\s*(\d+(?:\.\d+)?)\s*(10m|m)',
+                "name_template": "{spec}",
+                "unit": "10m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 地下钢管铺设 ==========
+            {
+                "pattern": r'(地下敷设.*?钢管铺设.*?直径≤?\d+mm)\s*(\d+(?:\.\d+)?)\s*(m|米)',
+                "name_template": "{spec}",
+                "unit": "m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 沟槽挖填/铺砂盖砖 ==========
+            {
+                "pattern": r'(沟槽挖填.*?|铺砂、盖砖.*?)\s*(\d+(?:\.\d+)?)\s*(m|米|处)',
+                "name_template": "{spec}",
+                "unit": "m",
+                "spec_group": 1,
+                "qty_group": 2
+            },
+            # ========== 微电机 ==========
+            {
+                "pattern": r'(微型电机、变频机组检查接线.*?微型电机)\s*(\d+(?:\.\d+)?)\s*(台)',
+                "name_template": "{spec}",
+                "unit": "台",
                 "spec_group": 1,
                 "qty_group": 2
             },

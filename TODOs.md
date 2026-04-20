@@ -7,14 +7,14 @@
 
 ## 任务清单
 
-### Task 1: 创建 quantity_extractor.py 基础框架 ⬜
-- [ ] 创建测试文件 `tests/test_quantity_extractor.py`
-- [ ] 实现 `QuantityExtractor`、`StructuredTableExtractor`、`DescriptiveExtractor` 三个主类
-- [ ] 基础框架测试通过
+### Task 1: 创建 quantity_extractor.py 基础框架 ✅
+- [x] 创建测试文件 `tests/test_quantity_extractor.py`
+- [x] 实现 `QuantityExtractor`、`StructuredTableExtractor`、`DescriptiveExtractor` 三个主类
+- [x] 基础框架测试通过（13/13）
 
-### Task 2: 扩展规则模式库 ⬜
-- [ ] 添加更多正则表达式模式（接线盒、活接头、钢板等）
-- [ ] 测试验证新模式
+### Task 2: 扩展规则模式库 ✅
+- [x] 添加更多正则表达式模式（接线盒、活接头、钢板等）
+- [x] 测试验证新模式
 
 ### Task 3: 集成AI语义解析（兜底） ⬜
 - [ ] 添加 `AISemanticParser` 类
