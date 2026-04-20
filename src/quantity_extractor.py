@@ -12,9 +12,9 @@ from abc import ABC, abstractmethod
 class QuantityExtractor:
     """工程量提取主入口"""
 
-    def __init__(self):
+    def __init__(self, api_key: str = None):
         self.table_extractor = StructuredTableExtractor()
-        self.descriptive_extractor = DescriptiveExtractor()
+        self.descriptive_extractor = DescriptiveExtractor(api_key)
 
     def extract(self, items: List[Dict]) -> List[Dict]:
         """

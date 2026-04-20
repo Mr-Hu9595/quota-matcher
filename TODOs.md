@@ -16,17 +16,18 @@
 - [x] 添加更多正则表达式模式（接线盒、活接头、钢板等）
 - [x] 测试验证新模式
 
-### Task 3: 集成AI语义解析（兜底） ⬜
-- [ ] 添加 `AISemanticParser` 类
-- [ ] 在 `DescriptiveExtractor` 中集成AI调用作为规则兜底
+### Task 3: 集成AI语义解析（兜底） ✅
+- [x] `AISemanticParser` 类已实现（规则兜底）
+- [x] `QuantityExtractor` 支持传递api_key参数
+- [x] 在 `DescriptiveExtractor` 中集成AI调用作为规则兜底
 
-### Task 4: 集成到quota_matcher.py主流程 ⬜
-- [ ] 在 `QuotaMatcher.__init__` 中初始化 `QuantityExtractor`
-- [ ] 在 `process()` 方法中调用工程量识别
+### Task 4: 集成到quota_matcher.py主流程 ✅
+- [x] 在 `QuotaMatcher.__init__` 中初始化 `QuantityExtractor`
+- [x] 在 `process()` 方法中调用工程量识别
 
-### Task 5: 输出字段增强验证 ⬜
-- [ ] 验证增强字段（spec, source, confidence, extraction_note）正确输出
-- [ ] 完整流程测试
+### Task 5: 输出字段增强验证 ✅
+- [x] 增强字段（spec, source, confidence, extraction_note）追加到备注列
+- [x] pytest 13/13 测试通过
 
 ## 设计文档
 - 设计: `docs/superpowers/specs/2026-04-18-quantity-extractor-design.md`

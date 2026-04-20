@@ -222,7 +222,7 @@ class QuotaMatcher:
             qty_cell.alignment = center_align
             qty_cell.border = thin_border
 
-            # 备注（包含匹配说明和单位转换信息）
+            # 备注（包含匹配说明、单位转换信息和增强字段）
             note = result.get("note", "")
             # 添加匹配方式说明
             confidence = result.get("confidence", "low")
@@ -236,6 +236,21 @@ class QuotaMatcher:
                 note = f"{match_note}；{note}"
             else:
                 note = match_note
+
+            # 追加增强字段信息（规格、来源、置信度、提取说明）
+            spec = result.get("spec", "")
+            source = result.get("source", "")
+            extraction_note = result.get("extraction_note", "")
+            if spec or source:
+                extra_parts = []
+                if spec:
+                    extra_parts.append(f"规格:{spec}")
+                if source:
+                    extra_parts.append(f"来源:{source}")
+                if extraction_note:
+                    extra_parts.append(f"提取:{extraction_note}")
+                note = f"{note} | {'; '.join(extra_parts)}"
+
             note_cell = ws.cell(row=row, column=5, value=note)
             note_cell.border = thin_border
 
