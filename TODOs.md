@@ -1,8 +1,8 @@
 # 工程量识别模块 - 待办任务清单
 
 ## 项目信息
-- 工作目录: `D:\claude code`
-- 项目路径: `D:\claude code\skills\quota-matcher\`
+- 工作目录: `E:\skillshub`
+- 项目路径: `E:\skillshub\quota-matcher\`
 - 唤醒词: "继续套定额项目"
 
 ## 任务清单
@@ -29,14 +29,14 @@
 - [ ] 完整流程测试
 
 ## 设计文档
-- 设计: `skills/quota-matcher/docs/superpowers/specs/2026-04-18-quantity-extractor-design.md`
-- 计划: `skills/quota-matcher/docs/superpowers/plans/2026-04-18-quantity-extractor-implementation.md`
+- 设计: `docs/superpowers/specs/2026-04-18-quantity-extractor-design.md`
+- 计划: `docs/superpowers/plans/2026-04-18-quantity-extractor-implementation.md`
 
 ## 快速启动
 ```bash
-cd /d/claude code
+cd E:/skillshub/quota-matcher
 # 激活环境后执行 Task 1
-python -m pytest skills/quota-matcher/tests/test_quantity_extractor.py -v
+python -m pytest tests/test_quantity_extractor.py -v
 ```
 
 ## 核心设计

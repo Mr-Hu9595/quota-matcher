@@ -1,5 +1,7 @@
 # skills/quota-matcher/tests/test_quantity_extractor.py
 import pytest
+import sys
+sys.path.insert(0, "src")
 from quantity_extractor import QuantityExtractor, StructuredTableExtractor, DescriptiveExtractor
 
 
