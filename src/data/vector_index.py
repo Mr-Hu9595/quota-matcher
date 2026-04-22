@@ -109,8 +109,15 @@ class VectorStore:
         if not CHROMADB_AVAILABLE:
             return False
         try:
-            count = self.collection.count()
-            return count > 0
+            # Check if any of the professional collections has data
+            for profession in self.COLLECTION_NAMES.keys():
+                try:
+                    collection = self.get_collection(profession)
+                    if collection and collection.count() > 0:
+                        return True
+                except Exception:
+                    continue
+            return False
         except Exception:
             return False
 
@@ -144,6 +151,8 @@ class VectorStore:
             if 'created_at' not in columns:
                 cursor.execute("ALTER TABLE quotas ADD COLUMN created_at TIMESTAMP")
                 cursor.execute("UPDATE quotas SET created_at = CURRENT_TIMESTAMP WHERE created_at IS NULL")
+            if 'work_content' not in columns:
+                cursor.execute("ALTER TABLE quotas ADD COLUMN work_content TEXT")
 
             conn.commit()
             print("quotas表已更新")
@@ -160,6 +169,7 @@ class VectorStore:
                     section TEXT,
                     profession TEXT NOT NULL,
                     source_file TEXT,
+                    work_content TEXT,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     UNIQUE(code, profession)
                 )
