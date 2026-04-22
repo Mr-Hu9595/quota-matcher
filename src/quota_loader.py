@@ -1,6 +1,6 @@
 """
 定额文件加载器
-功能：读取并解析河南省通用安装工程预算定额2016.txt
+功能：读取并解析河南省各专业预算定额文件
 """
 
 import re
@@ -11,20 +11,63 @@ from typing import List, Dict
 class QuotaLoader:
     """定额文件加载器"""
 
-    # 定额文件路径
+    # 默认定额文件路径
     QUOTA_FILE = Path(__file__).parent.parent / "db" / "河南省通用安装工程预算定额2016.txt"
 
-    def __init__(self, quota_file: str = None):
+    # 专业名称映射（文件名 -> 专业名称）
+    PROFESSION_MAP = {
+        "河南省通用安装工程预算定额2016.txt": "河南省安装工程",
+        "河南省市政工程预算定额2016.txt": "河南省市政工程",
+        "河南省房屋建筑与装饰工程预算定额2016.txt": "河南省房屋建筑与装饰工程",
+        "河南省城市轨道交通工程预算定额2019.txt": "河南省城市轨道交通工程",
+        "河南省城市地下综合管廊工程预算定额2019.txt": "河南省城市地下综合管廊工程",
+        "河南省绿色建筑工程预算定额2019.txt": "河南省绿色建筑工程",
+        "河南省装配式建筑工程预算定额2019.txt": "河南省装配式建筑工程",
+        "河南省市政公用设施养护维修预算定额2020.txt": "河南省市政公用设施养护维修",
+    }
+
+    # 定额编号格式正则（按专业）
+    CODE_PATTERNS = {
+        "河南省安装工程": r'^\d+-\d+-\d+$',           # X-X-X (如 4-9-165)
+        "河南省市政工程": r'^\d+-\d+-\d+$',           # X-X-X (如 5-3-385)
+        "河南省房屋建筑与装饰工程": r'^\d+-\d+$',     # X-XX (如 1-12)
+        "河南省城市轨道交通工程": r'^\d+-\d{3}$',    # X-XXX (如 1-001)
+        "河南省城市地下综合管廊工程": r'^\d+-\d+-\d+$',  # X-X-X
+        "河南省绿色建筑工程": r'^\d+-\d+$',           # X-XX
+        "河南省装配式建筑工程": r'^\d+-[A-Za-z0-9]+$',  # X-字母数字 (如 1-HA1)
+        "河南省市政公用设施养护维修": r'^\d+-\d+$',   # X-XX
+    }
+
+    # 默认编号格式（兼容旧格式）
+    DEFAULT_CODE_PATTERN = r'^\d+-\d+(\-\d+)?$'
+
+    def __init__(self, quota_file: str = None, profession: str = None):
         """
         初始化定额加载器
 
         Args:
             quota_file: 定额文件路径，默认使用项目根目录的定额文件
+            profession: 专业名称（如"安装"、"市政"等），如果未提供则根据文件名自动检测
         """
         if quota_file:
             self.quota_file = Path(quota_file)
         else:
             self.quota_file = self.QUOTA_FILE
+
+        # 确定专业名称
+        if profession:
+            self.profession = profession
+        else:
+            self.profession = self._detect_profession()
+
+    def _detect_profession(self) -> str:
+        """根据文件名自动检测专业名称"""
+        filename = self.quota_file.name
+        return self.PROFESSION_MAP.get(filename, "河南省安装工程")
+
+    def get_profession(self) -> str:
+        """获取当前加载器对应的专业名称"""
+        return self.profession
 
     def load(self) -> List[Dict]:
         """
@@ -79,7 +122,9 @@ class QuotaLoader:
                             "unit": unit,
                             "price": price,
                             "chapter": current_chapter,
-                            "section": current_section
+                            "section": current_section,
+                            "profession": self.profession,
+                            "source_file": str(self.quota_file)
                         })
 
         return quotas
@@ -94,9 +139,17 @@ class QuotaLoader:
         Returns:
             bool: 是否有效
         """
-        # 定额编号格式: 章节-小节-序号 (如 1-1-1, 12-3-45)
-        pattern = r'^\d+-\d+-\d+$'
-        return bool(re.match(pattern, code))
+        if not code:
+            return False
+
+        # 先尝试按专业精确匹配
+        if self.profession in self.CODE_PATTERNS:
+            pattern = self.CODE_PATTERNS[self.profession]
+            if re.match(pattern, code):
+                return True
+
+        # 回退到默认格式检查
+        return bool(re.match(self.DEFAULT_CODE_PATTERN, code))
 
     def search(self, keyword: str, quotas: List[Dict] = None) -> List[Dict]:
         """
