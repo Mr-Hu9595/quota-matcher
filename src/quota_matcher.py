@@ -9,6 +9,9 @@
 示例:
     python quota_matcher.py "D:\工作\工程量清单.xlsx"
     python quota_matcher.py "D:\工作\清单.docx" -o "D:\工作\结果.xlsx"
+
+注意: 此文件已重构，核心逻辑已移至 src/business/quota_matcher.py
+此文件保留用于向后兼容。
 """
 
 import os
@@ -22,6 +25,9 @@ from typing import List, Dict
 # 添加当前目录到路径
 sys.path.insert(0, str(Path(__file__).parent))
 
+# 导入新的业务层（向后兼容）
+from business.quota_matcher import QuotaMatcherBusiness
+
 from quota_loader import QuotaLoader
 from file_parser import FileParser
 from minimax_matcher import MiniMaxMatcher
@@ -30,7 +36,11 @@ from quantity_extractor import QuantityExtractor
 
 
 class QuotaMatcher:
-    """定额匹配主类"""
+    """
+    定额匹配主类（向后兼容）
+
+    注意：新代码建议使用 QuotaMatcherBusiness
+    """
 
     def __init__(self, use_local: bool = False, use_vector: bool = False):
         self.quota_loader = QuotaLoader()
@@ -41,6 +51,9 @@ class QuotaMatcher:
         self.use_vector = use_vector
         self.vector_store = None
         self.quantity_extractor = QuantityExtractor()
+
+        # 新的业务层实例（用于日志）
+        self._business = None
 
     def load_quota_data(self):
         """加载定额数据"""

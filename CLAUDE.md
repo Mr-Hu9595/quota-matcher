@@ -27,45 +27,144 @@
 
 ## 技术架构
 
+### 三层分离架构
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   自然语言接口 (CLI / Claude Code)               │
+│  用户: "处理这份工程量清单" / "添加一条新规则" / "查询4-9开头的定额"  │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────▼────────────────────────────────────┐
+│                      业务层 (Business)                           │
+│  quota_matcher.py  ← 只管流程编排，不碰数据                      │
+│  • process_workflow()    文件解析 → 工程量识别 → 匹配 → 输出    │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────▼────────────────────────────────────┐
+│                   匹配引擎层 (Matching Engine)                     │
+│  纯逻辑接口，接口稳定，不含数据操作                               │
+│                                                                 │
+│  engine/base.py          ← EngineABC 抽象基类                    │
+│  engine/rule_engine.py   ← 规则库精确匹配                        │
+│  engine/vector_engine.py ← 向量语义搜索                          │
+│  engine/hybrid_engine.py ← 规则优先 + 向量辅助                    │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+┌────────────────────────────▼────────────────────────────────────┐
+│                      数据层 (Data)                                │
+│  只做数据CRUD，不含任何业务逻辑，接口标准化                        │
+│                                                                 │
+│  data/quota_db.py        ← 定额数据库 (SQLite)                   │
+│  data/vector_index.py    ← 向量索引 (ChromaDB)                   │
+│  data/rule_db.py         ← 规则数据库 (SQLite)                   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
 ### 目录结构
 
 ```
 quota-matcher/
-├── db/                           # 数据库（定额原文、SQLite、向量数据）
+├── db/                           # 数据库
+│   ├── quota.db                  # SQLite 定额数据库
+│   ├── chroma_data/             # ChromaDB 向量数据
+│   └── *.txt                    # 定额原文文件
 ├── src/                          # 源代码
-│   ├── quota_matcher.py          # 主入口
-│   ├── quota_loader.py           # 定额加载
-│   ├── local_matcher.py          # 规则匹配
-│   ├── minimax_matcher.py        # AI语义匹配
-│   ├── vector_store.py           # 向量存储
+│   ├── data/                     # 数据层（稳定）
+│   │   ├── quota_db.py          # 定额数据库
+│   │   ├── vector_index.py      # 向量索引
+│   │   └── rule_db.py           # 规则数据库
+│   ├── engine/                   # 引擎层（可插拔）
+│   │   ├── base.py              # 抽象基类
+│   │   ├── rule_engine.py       # 规则匹配
+│   │   ├── vector_engine.py     # 向量匹配
+│   │   └── hybrid_engine.py      # 混合匹配
+│   ├── business/                 # 业务层
+│   │   └── quota_matcher.py     # 主流程
+│   ├── cli/                      # CLI接口
+│   │   └── cli.py               # 自然语言驱动入口
+│   ├── utils/                    # 工具
+│   │   └── logging.py           # 统一日志
+│   ├── quota_matcher.py         # 向后兼容入口
 │   ├── file_parser.py            # 文件解析
-│   ├── column_identifier.py      # 列名识别
-│   ├── unit_converter.py         # 单位换算
-│   └── quantity_extractor.py     # 工程量提取
+│   ├── quantity_extractor.py     # 工程量提取
+│   └── unit_converter.py         # 单位换算
 ├── scripts/                      # 工具脚本
-└── tests/                        # 测试
+├── logs/                         # 日志目录
+└── CLAUDE.md                    # 本文件
 ```
 
-### 核心数据流
+### 数据层接口（稳定不变）
 
+```python
+# 定额数据库
+quota_db.get_by_code(code)       # 按编号查
+quota_db.search_by_prefix(prefix)  # 按前缀查
+quota_db.search_by_keyword(kw)   # 按关键词查
+
+# 规则数据库
+rule_db.get_rules(prefix)         # 获取规则
+rule_db.add_rule(code, name, unit, keywords)  # 添加规则
+rule_db.confirm_rule(code)       # 确认使用（自学习）
+
+# 向量索引
+vector_index.search(query, top_k, profession)  # 语义搜索
 ```
-输入文件 (Excel/Word)
-         │
-         ▼
-    FileParser.parse()
-         │
-         ▼
-    QuantityExtractor.extract()
-         │
-         ▼
-    Matcher.match()  ◄─────────── VectorStore.search()
-         │                        │
-         │                        └── QuotaLoader.load()
-         ▼
-    UnitConverter.convert()
-         │
-         ▼
-    输出 Excel
+
+### 引擎层接口（可插拔）
+
+```python
+# 引擎基类
+engine.match(work_content, context)  # 单条匹配
+engine.batch_match(items)            # 批量匹配
+
+# 可用引擎
+RuleEngine      # 纯规则匹配
+VectorEngine   # 纯向量匹配
+HybridEngine   # 混合匹配（默认）
+```
+
+---
+
+## 日志功能
+
+日志目录: `logs/`
+
+| 文件 | 说明 |
+|------|------|
+| business.log | 业务流程日志 |
+| engine.log | 引擎调试日志 |
+| data.log | 数据层日志 |
+| match.log | 匹配操作详细日志 |
+| api.log | API调用日志 |
+
+日志等级: DEBUG < INFO < WARNING < ERROR
+
+---
+
+## 自然语言驱动 (Claude Code)
+
+通过 CLI 接口用自然语言控制程序：
+
+```bash
+# 处理工程量清单
+python src/cli/cli.py process "D:\清单.xlsx" -o "D:\结果.xlsx"
+
+# 查询定额
+python src/cli/cli.py query --keyword "电力电缆"
+python src/cli/cli.py query --prefix "4-9"
+
+# 学习新规则
+python src/cli/cli.py learn --code "4-9-999" --name "测试" --unit "10m" --keywords "电力电缆,测试"
+
+# 确认规则（自学习）
+python src/cli/cli.py confirm --code "4-9-159"
+
+# 统计信息
+python src/cli/cli.py stats
+
+# 重建向量索引
+python src/cli/cli.py rebuild-index --profession "河南省安装工程"
 ```
 
 ---
@@ -79,19 +178,19 @@ quota-matcher/
 1. **语义理解**: 充分理解工作内容（名称、规格、型号）
 2. **向量搜索**: 从向量数据库检索相似定额
 3. **规则兜底**: 标准化条目走规则精确匹配
-4. **置信度评估**: 高/中/低/待人工确认
+4. **置信度评估**: high/medium/low/待人工确认
 
 ### 规则匹配（兜底）
 
-`local_matcher.py` 中的 `MATERIAL_QUOTA_MAP` 用于：
+`rule_engine.py` 用于：
 - 标准化条目精确匹配（已知映射）
 - 电力电缆按最大单芯截面选择定额
 - 控制电缆按芯数选择定额
 - 钢管按 DN 规格精确匹配
 
-### 语义搜索（主渠道）
+### 向量搜索（主渠道）
 
-`vector_store.py` 用于：
+`vector_engine.py` 用于：
 - 语义相似度计算
 - 模糊/非标准表述匹配
 - 跨表述变体识别
@@ -102,11 +201,13 @@ quota-matcher/
 
 | 文件 | 职责 | 关键类/函数 |
 |------|------|-------------|
-| `quota_matcher.py` | 主入口，CLI | `QuotaMatcher.process()` |
-| `quota_loader.py` | 加载定额文件 | `QuotaLoader.load()` |
-| `local_matcher.py` | 规则匹配 | `LocalMatcher.match()`, `MATERIAL_QUOTA_MAP` |
-| `vector_store.py` | 向量存储搜索 | `VectorStore.search()`, `build_index()` |
-| `file_parser.py` | 文件解析 | `FileParser.parse()`, `ExcelParser`, `WordParser` |
+| `cli/cli.py` | 自然语言驱动入口 | `QuotaCLI` |
+| `business/quota_matcher.py` | 主流程编排 | `QuotaMatcherBusiness.process()` |
+| `data/quota_db.py` | 定额数据库 | `QuotaDB` |
+| `data/rule_db.py` | 规则数据库 | `RuleDB` |
+| `data/vector_index.py` | 向量索引 | `VectorIndex.search()` |
+| `engine/hybrid_engine.py` | 混合匹配引擎 | `HybridEngine` |
+| `file_parser.py` | 文件解析 | `FileParser.parse()` |
 | `quantity_extractor.py` | 工程量提取 | `QuantityExtractor.extract()` |
 | `unit_converter.py` | 单位换算 | `UnitConverter.convert()` |
 
@@ -141,16 +242,28 @@ quota-matcher/
 
 ---
 
+## 数据库状态
+
+| 数据库 | 数量 | 说明 |
+|--------|------|------|
+| SQLite quotas | 37,514 | 8个专业定额 |
+| SQLite rules | 55 | 匹配规则库 |
+| ChromaDB | ~37,959 | 向量索引 |
+
+---
+
 ## 扩展计划
 
 ### 短期
 - [x] 完善 README 和 CLAUDE.md
-- [x] 构建向量数据库（已完成，16881 条定额，db/chroma_data + db/quota.db）
+- [x] 三层架构重构（数据层/引擎层/业务层分离）
+- [x] 日志功能
+- [x] CLI自然语言接口
 - [ ] 优化通用匹配规则
 
 ### 中期
 - [ ] 支持 PDF 格式解析
-- [ ] 丰富 MATERIAL_QUOTA_MAP
+- [ ] 丰富规则库
 - [ ] 完善单位换算规则
 
 ### 长期
