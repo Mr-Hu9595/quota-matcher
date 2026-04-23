@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 工程量清单智能匹配定额工具
 主程序入口
@@ -394,7 +395,7 @@ def main():
 
 注意:
   AI匹配需要设置环境变量 MINIMAX_API_KEY
-  set MINIMAX_API_KEY=sk-cp-...
+  set MINIMAX_API_KEY=你的API密钥
         """
     )
 
@@ -413,7 +414,7 @@ def main():
     # 如果不使用本地匹配，检查API密钥
     if not args.local and not os.environ.get("MINIMAX_API_KEY"):
         print("错误: 未设置 MINIMAX_API_KEY 环境变量")
-        print("请先设置: set MINIMAX_API_KEY=sk-cp-...")
+        print("请先设置: set MINIMAX_API_KEY=你的API密钥")
         print("或使用 --local 参数进行本地匹配")
         sys.exit(1)
 

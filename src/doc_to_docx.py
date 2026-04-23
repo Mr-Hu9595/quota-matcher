@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 将 .doc 文件转换为 .docx 格式（保留原文件）
 使用 Word COM 接口，需要 Windows + Microsoft Word

@@ -16,8 +16,8 @@ from ..utils.logging import get_engine_logger
 
 logger = get_engine_logger()
 
-# MiniMax Chat API 配置
-MINIMAX_API_URL = "https://api.minimax.chat/v1/text/chatcompletion_v2"
+# MiniMax Chat API 配置 (Anthropic 兼容格式，thinking 和 text 分开)
+MINIMAX_API_URL = "https://api.minimaxi.com/anthropic/v1/messages"
 DEFAULT_MODEL = "MiniMax-M2.7"
 
 
@@ -161,26 +161,23 @@ class ChatEngine(EngineABC):
 
         candidates_text = '\n'.join(candidate_lines)
 
-        system_prompt = f"""你是一个JSON输出机器。你的任务是根据工作内容从候选定额中选择最匹配的项。
+        system_prompt = f"""你是一个定额匹配专家。你的任务是根据工作内容从候选定额列表中选择最匹配的定额编号。
 
 工作内容：{work_content}
 {'工程量：' + str(quantity) + ' ' + unit if quantity else ''}
 
-候选定额：
+候选定额列表：
 {candidates_text}
 
-请从上述候选定额中选择最匹配的一项。
+你必须严格按以下JSON格式输出，不要输出任何其他内容：
+{{"index":数字,"reason":"简短原因"}}
 
-输出规则：
-- 必须只输出一个JSON对象，不要输出任何其他内容
-- 格式：{{"index": 序号, "reason": "原因"}}
-- index是1-20之间的数字，表示候选定额的序号
+规则：
+- index必须是1-20之间的整数，表示候选定额的序号
+- 只输出JSON，不要任何解释、注释或思考过程
+- 如果无法判断，猜测最可能的选项
 
-示例：
-输入：安装台式电脑，候选：[1]服务器 [2]微型计算机
-输出：{{"index": 2, "reason": "台式电脑是微型计算机"}}
-
-现在开始。输出："""
+直接输出JSON："""
 
         messages = [
             {"role": "system", "content": system_prompt},
@@ -282,27 +279,37 @@ class ChatEngine(EngineABC):
                 logger.error(f"Chat API 失败: status_code={status_code}, msg={base_resp.get('status_msg', '')}")
                 return None
 
-            choices = result.get("choices", [])
-            if not choices:
+            # Anthropic API 格式：content 是内容块数组
+            content_blocks = result.get("content", [])
+            if not content_blocks:
                 logger.error(f"Chat API 无返回内容: {result}")
                 return None
 
-            choice = choices[0]
-            msg = choice.get("message", {})
+            # 分别提取 thinking 和 text 块的内容
+            text_parts = []
+            thinking_parts = []
+            for block in content_blocks:
+                if block.get("type") == "text":
+                    text_parts.append(block.get("text", ""))
+                elif block.get("type") == "thinking":
+                    thinking_parts.append(block.get("thinking", ""))
 
-            # M2.7 推理模型：content 是最终回复，reasoning_content 是思考过程
-            raw_text = msg.get("content", "") or msg.get("reasoning_content", "") or ""
-            logger.debug(f"Chat API 原始响应: {raw_text[:300]}")
+            text_content = "".join(text_parts)
+            thinking_content = "".join(thinking_parts)
 
-            # 尝试从 content 提取 JSON
-            parsed = self._extract_json_from_text(msg.get("content", ""))
+            logger.debug(f"Chat API text响应: {text_content[:200] if text_content else '(empty)'}")
+            logger.debug(f"Chat API thinking响应: {thinking_content[:200] if thinking_content else '(empty)'}")
 
-            # 如果 content 里没有，尝试从 reasoning_content 提取
+            # Anthropic 格式：优先从 text 提取 JSON，再从 thinking 提取
+            parsed = self._extract_json_from_text(text_content)
+            if parsed is None and thinking_content:
+                parsed = self._extract_json_from_text(thinking_content)
+                if parsed:
+                    logger.debug(f"从 thinking 块提取到 JSON")
+
             if parsed is None:
-                parsed = self._extract_json_from_text(msg.get("reasoning_content", ""))
-
-            if parsed is None:
-                logger.error(f"无法从响应中提取 JSON: {raw_text[:200]}")
+                sample = (text_content or thinking_content or "")[:200]
+                logger.error(f"无法从响应中提取 JSON: {sample}")
                 return None
 
             index_val = parsed.get("index")

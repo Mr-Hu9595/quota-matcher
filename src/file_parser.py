@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 智能文件解析器
 功能：自动识别文件类型（Word/Excel），解析工程量清单
@@ -23,7 +24,7 @@ try:
 except ImportError:
     Document = None
 
-from column_identifier import ColumnIdentifier
+from src.column_identifier import ColumnIdentifier
 
 
 class ParseResult:
@@ -912,20 +913,9 @@ class WordParser(BaseParser):
                     for cell_text in cells:
                         if '共计' not in cell_text:
                             continue
-                        match = self.QIJEI_PATTERN.search(cell_text)
-                        if match:
-                            quantity = float(match.group(1))
-                            unit = match.group(2)
-                            name = self.QIJEI_PATTERN.sub("", cell_text).strip()
-                            name = ' '.join(name.split())
-                            if name:
-                                items.append({
-                                    "name": name,
-                                    "quantity": quantity,
-                                    "unit": unit,
-                                    "sheet": f"表格{table_index + 1}",
-                                    "original_unit": unit
-                                })
+                        # 单格多项目：逐个提取"共计：数量单位"
+                        items_extracted = self._extract_multi_items_from_cell(cell_text)
+                        items.extend(items_extracted)
 
             items = self._deduplicate_items(items)
             return items, warnings
@@ -942,20 +932,58 @@ class WordParser(BaseParser):
                     item = self._parse_normal_row(name, qty_text, unit, table_index, row_idx)
                     if item:
                         items.append(item)
+            elif name_col is not None and quantity_col is None:
+                # 名称列有值但数量列无值，检查是否需要用"共计"模式解析
+                if name_col < len(cells):
+                    cell_text = cells[name_col]
+                    if '共计' in cell_text:
+                        items_extracted = self._extract_multi_items_from_cell(cell_text)
+                        items.extend(items_extracted)
 
         items = self._deduplicate_items(items)
         return items, warnings
 
+    def _extract_multi_items_from_cell(self, cell_text: str) -> List[Dict]:
+        """
+        从单格文本中提取多个"共计：数量单位"条目
+
+        Args:
+            cell_text: 单元格文本（可能包含多个共计项）
+
+        Returns:
+            List[Dict]: 工程量项目列表
+        """
+        items = []
+        # 查找所有"共计：数量单位"匹配
+        matches = list(self.QIJEI_PATTERN.finditer(cell_text))
+        if not matches:
+            return items
+
+        for i, match in enumerate(matches):
+            quantity = float(match.group(1))
+            unit = match.group(2)
+            # 当前项名称：上一个共计结束位置 到 当前共计开始位置
+            start_pos = 0
+            if i > 0:
+                prev_match = matches[i - 1]
+                start_pos = prev_match.end()
+
+            name = cell_text[start_pos:match.start()].strip()
+            # 清理：移除换行符，压缩空白
+            name = ' '.join(name.replace('\n', ' ').split())
+            if name:
+                items.append({
+                    "name": name,
+                    "quantity": quantity,
+                    "unit": unit,
+                    "sheet": "表格",
+                    "original_unit": unit
+                })
+        return items
+
     def _deduplicate_items(self, items: List[Dict]) -> List[Dict]:
-        """去重：如果多个项目名称和工程量相同，只保留一个"""
-        seen = set()
-        unique_items = []
-        for item in items:
-            key = (item['name'], item['quantity'], item['unit'])
-            if key not in seen:
-                seen.add(key)
-                unique_items.append(item)
-        return unique_items
+        """去重：已禁用 - 工程量清单中相同条目代表不同工作内容"""
+        return items  # 保留所有条目，不去重
 
     def _parse_normal_row(self, name: str, qty_text: str, unit: str,
                          table_index: int, row_index: int) -> Optional[Dict]:

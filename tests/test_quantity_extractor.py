@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # skills/quota-matcher/tests/test_quantity_extractor.py
 import pytest
 import sys

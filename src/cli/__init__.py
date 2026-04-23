@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 CLI接口 - Claude Code自然语言驱动入口
 """
