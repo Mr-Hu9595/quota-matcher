@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 自然语言接口 - Claude Code 调用入口
 
@@ -10,6 +11,7 @@
 """
 
 import argparse
+import os
 import sys
 from pathlib import Path
 from typing import List
@@ -49,7 +51,10 @@ class QuotaCLI:
         self.quota_db = QuotaDB()
         self.vector_index = VectorIndex()
         self.rule_db = RuleDB()
-        self.engine = HybridEngine(self.rule_db, self.vector_index)
+
+        # 从环境变量获取 API Key
+        api_key = os.environ.get("MINIMAX_API_KEY") or os.environ.get("MINIMAX_CHAT_API_KEY")
+        self.engine = HybridEngine(rule_db=self.rule_db, quota_db=self.quota_db, api_key=api_key)
 
         logger.info("QuotaCLI 初始化完成")
 
