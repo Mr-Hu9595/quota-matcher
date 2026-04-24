@@ -5,7 +5,7 @@
 
 from .base import EngineABC, MatchResult
 from .rule_engine import RuleEngine
-from .vector_engine import VectorEngine
+from .chat_engine import ChatEngine
 from .hybrid_engine import HybridEngine
 
-__all__ = ['EngineABC', 'MatchResult', 'RuleEngine', 'VectorEngine', 'HybridEngine']
+__all__ = ['EngineABC', 'MatchResult', 'RuleEngine', 'ChatEngine', 'HybridEngine']

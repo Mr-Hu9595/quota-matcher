@@ -7,7 +7,6 @@
     python -m src.cli query "电力电缆"
     python -m src.cli learn --code "4-9-XXX" --name "xxx" --keywords "电力电缆"
     python -m src.cli stats
-    python -m src.cli rebuild-index --profession "河南省安装工程"
 """
 
 import argparse
@@ -20,7 +19,6 @@ from typing import List
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from src.data.quota_db import QuotaDB
-from src.data.vector_index import VectorIndex
 from src.data.rule_db import RuleDB
 from src.engine.hybrid_engine import HybridEngine
 from src.engine.rule_engine import RuleEngine
@@ -41,7 +39,6 @@ class QuotaCLI:
     - query: 查询定额
     - learn: 学习新规则
     - stats: 统计信息
-    - rebuild-index: 重建向量索引
     """
 
     def __init__(self):
@@ -49,7 +46,6 @@ class QuotaCLI:
         logger.info("初始化 QuotaCLI...")
 
         self.quota_db = QuotaDB()
-        self.vector_index = VectorIndex()
         self.rule_db = RuleDB()
 
         # 从环境变量获取 API Key
@@ -74,7 +70,6 @@ class QuotaCLI:
         business = QuotaMatcherBusiness(
             engine=self.engine,
             quota_db=self.quota_db,
-            vector_index=self.vector_index,
             rule_db=self.rule_db
         )
 
@@ -142,45 +137,15 @@ class QuotaCLI:
         stats = {
             'quota_count': self.quota_db.count(),
             'rule_count': self.rule_db.count(),
-            'has_vector_index': self.vector_index.has_index(),
             'prefixes': self.rule_db.get_all_prefixes()
         }
 
         print(f"统计信息:")
         print(f"  定额数量: {stats['quota_count']}")
         print(f"  规则数量: {stats['rule_count']}")
-        print(f"  向量索引: {'已构建' if stats['has_vector_index'] else '未构建'}")
         print(f"  前缀分类: {len(stats['prefixes'])} 个")
 
         return stats
-
-    def rebuild_index(self, profession: str = None, api_key: str = None):
-        """
-        重建向量索引
-
-        Args:
-            profession: 专业名称（可选，为None则重建所有）
-            api_key: API密钥（可选）
-        """
-        logger.info(f"CLI rebuild-index: profession={profession}")
-
-        if profession:
-            print(f"重建 {profession} 向量索引...")
-            quotas = self.quota_db.get_by_profession(profession)
-        else:
-            print("重建所有专业向量索引...")
-            quotas = self.quota_db.get_all()
-
-        if not quotas:
-            print("没有找到定额数据")
-            return
-
-        print(f"准备索引 {len(quotas)} 条定额...")
-
-        api_key = api_key or input("请输入MiniMax API密钥（或直接回车使用本地模型）: ").strip() or None
-
-        self.vector_index.rebuild(quotas, api_key)
-        print("索引重建完成")
 
 
 def main():
@@ -196,7 +161,6 @@ def main():
   python -m src.cli learn --code "4-9-999" --name "测试定额" --unit "10m" --keywords "电力电缆,测试"
   python -m src.cli confirm --code "4-9-159"
   python -m src.cli stats
-  python -m src.cli rebuild-index --profession "河南省安装工程"
         """
     )
 
@@ -227,11 +191,6 @@ def main():
     # stats 命令
     subparsers.add_parser('stats', help='统计信息')
 
-    # rebuild-index 命令
-    rebuild_parser = subparsers.add_parser('rebuild-index', help='重建向量索引')
-    rebuild_parser.add_argument('--profession', '-p', help='专业名称')
-    rebuild_parser.add_argument('--api-key', help='API密钥')
-
     args = parser.parse_args()
 
     # 初始化CLI
@@ -256,9 +215,6 @@ def main():
 
     elif args.command == 'stats':
         cli.stats()
-
-    elif args.command == 'rebuild-index':
-        cli.rebuild_index(args.profession, args.api_key)
 
     else:
         parser.print_help()

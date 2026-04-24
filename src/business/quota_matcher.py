@@ -10,7 +10,6 @@ from datetime import datetime
 from typing import List, Dict
 
 from ..data.quota_db import QuotaDB
-from ..data.vector_index import VectorIndex
 from ..data.rule_db import RuleDB
 from ..engine.base import EngineABC, MatchResult
 from ..engine.hybrid_engine import HybridEngine
@@ -30,7 +29,6 @@ class QuotaMatcherBusiness:
     def __init__(self,
                  engine: EngineABC = None,
                  quota_db: QuotaDB = None,
-                 vector_index: VectorIndex = None,
                  rule_db: RuleDB = None):
         """
         初始化业务层
@@ -38,15 +36,13 @@ class QuotaMatcherBusiness:
         Args:
             engine: 匹配引擎（默认 HybridEngine）
             quota_db: 定额数据库
-            vector_index: 向量索引
             rule_db: 规则数据库
         """
         self.engine = engine or HybridEngine(
             rule_db=rule_db or RuleDB(),
-            vector_index=vector_index or VectorIndex()
+            quota_db=quota_db or QuotaDB()
         )
         self.quota_db = quota_db or QuotaDB()
-        self.vector_index = vector_index or VectorIndex()
         self.rule_db = rule_db or RuleDB()
 
     def process(self, input_file: str, output_file: str = None) -> str:

@@ -21,10 +21,8 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Vector database (rebuild on new machine with local embedding model)
+# Database
 quota.db
-chroma_data/
-*.hnsw*
 
 # Test/reference files (generated locally)
 test_*.xls

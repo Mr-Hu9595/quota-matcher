@@ -141,6 +141,10 @@ class RuleDB:
         logger.debug(f"获取规则: {len(result)} 条")
         return result
 
+    def get_all(self) -> List[QuotaRule]:
+        """获取所有规则（等同于 get_rules()）"""
+        return self.get_rules()
+
     def get_rule(self, code: str) -> Optional[QuotaRule]:
         """
         根据编号获取规则

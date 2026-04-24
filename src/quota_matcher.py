@@ -43,14 +43,12 @@ class QuotaMatcher:
     注意：新代码建议使用 QuotaMatcherBusiness
     """
 
-    def __init__(self, use_local: bool = False, use_vector: bool = False):
+    def __init__(self, use_local: bool = False):
         self.quota_loader = QuotaLoader()
         self.file_parser = FileParser()
         self.quota_data = None
         self.matcher = None
         self.use_local = use_local
-        self.use_vector = use_vector
-        self.vector_store = None
         self.quantity_extractor = QuantityExtractor()
 
         # 新的业务层实例（用于日志）
@@ -62,22 +60,6 @@ class QuotaMatcher:
         self.quota_data = self.quota_loader.load()
         print(f"已加载 {len(self.quota_data)} 条定额")
 
-        # 初始化向量存储（如果启用）
-        if self.use_vector:
-            try:
-                from vector_store import VectorStore
-                print("正在初始化向量存储...")
-                self.vector_store = VectorStore()
-                # 检查向量索引是否存在
-                if not self.vector_store.has_index():
-                    print("正在构建向量索引（首次运行需要几分钟）...")
-                    api_key = os.environ.get("MINIMAX_API_KEY")
-                    self.vector_store.build_index(self.quota_data, api_key)
-                print("向量存储初始化完成")
-            except Exception as e:
-                print(f"向量存储初始化失败: {e}")
-                self.vector_store = None
-
         # 初始化匹配器
         if self.use_local:
             print("使用本地关键词匹配...")
@@ -87,7 +69,7 @@ class QuotaMatcher:
             api_key = os.environ.get("MINIMAX_API_KEY")
             if not api_key:
                 raise ValueError("未设置MiniMax API密钥，请设置环境变量 MINIMAX_API_KEY")
-            self.matcher = MiniMaxMatcher(self.quota_data, api_key, self.vector_store)
+            self.matcher = MiniMaxMatcher(self.quota_data, api_key)
 
     def process(self, input_file: str, output_file: str = None) -> str:
         """
@@ -402,7 +384,6 @@ def main():
     parser.add_argument("input_file", help="输入文件路径（Excel或Word）")
     parser.add_argument("-o", "--output", help="输出文件路径（Excel），默认保存到输入文件所在目录")
     parser.add_argument("--local", action="store_true", help="使用本地关键词匹配，不调用AI")
-    parser.add_argument("--vector", action="store_true", help="使用向量搜索预筛选（需要先构建索引）")
 
     args = parser.parse_args()
 
@@ -419,7 +400,7 @@ def main():
         sys.exit(1)
 
     try:
-        matcher = QuotaMatcher(use_local=args.local, use_vector=args.vector)
+        matcher = QuotaMatcher(use_local=args.local)
         output_file = matcher.process(args.input_file, args.output)
 
         if output_file:
