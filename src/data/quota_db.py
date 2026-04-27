@@ -90,13 +90,16 @@ class QuotaDB:
         """初始化FTS5全文索引（如果可用）"""
         cursor = self.conn.cursor()
 
-        # 检查FTS5是否可用
+        # 检查FTS5是否可用（正确的方式：尝试创建临时表）
+        fts_available = False
         try:
-            cursor.execute("SELECT fts5 FROM pragma_compile_options WHERE fts5='enable'")
-            fts_available = cursor.fetchone() is not None
+            cursor.execute("CREATE VIRTUAL TABLE IF NOT EXISTS _fts5_test USING fts5(x)")
+            cursor.execute("DROP TABLE _fts5_test")
+            fts_available = True
         except:
             fts_available = False
 
+        # 如果临时表创建失败，再检查 quotas_fts 表是否已存在
         if not fts_available:
             try:
                 cursor.execute("SELECT 1 FROM quotas_fts LIMIT 1")

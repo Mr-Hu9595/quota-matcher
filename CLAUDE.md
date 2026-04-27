@@ -75,22 +75,26 @@ quota-matcher/
 │   │   ├── base.py              # 抽象基类 EngineABC + MatchResult
 │   │   ├── rule_engine.py       # 规则精确匹配
 │   │   ├── chat_engine.py       # MiniMax Chat API 语义匹配
-│   │   └── hybrid_engine.py      # 规则优先 + Chat 辅助
+│   │   ├── hybrid_engine.py      # 规则优先 + Chat 辅助
+│   │   └── spec_parser.py       # 规格参数解析器 (DN/功率/截面/芯数等)
 │   ├── business/                 # 业务层
+│   │   ├── __init__.py
 │   │   └── quota_matcher.py     # 主流程编排
 │   ├── cli/                      # CLI接口
+│   │   ├── __init__.py
 │   │   └── cli.py               # 自然语言驱动入口
 │   ├── utils/                    # 工具
+│   │   ├── __init__.py
 │   │   └── logging.py           # 统一日志
-│   ├── quota_matcher.py         # 主入口（兼容）
+│   ├── __init__.py
 │   ├── file_parser.py            # 文件解析
 │   ├── quantity_extractor.py     # 工程量提取
 │   ├── unit_converter.py         # 单位换算
-│   ├── quota_matcher.py         # 主入口（兼容）
 │   ├── chm_parser.py            # CHM帮助文件解析
 │   ├── column_identifier.py     # 列标识器
 │   ├── doc_to_docx.py           # Word转换
-│   └── quota_loader.py          # 定额加载器
+│   ├── quota_loader.py          # 定额加载器
+│   └── quota_matcher.py         # 旧版主入口（兼容）
 ├── db/                          # 数据库目录
 │   ├── quota.db                 # SQLite 定额数据库 (37,821条)
 │   └── 定额/                    # TXT原始定额文件
@@ -165,6 +169,8 @@ HybridEngine    # 混合匹配（规则优先 + Chat 辅助，默认）
 ---
 
 ## 自然语言驱动 (Claude Code)
+
+**自动化工作流触发规则**：当检测到用户要求“给xx套定额”、“套定额”、“套取定额”、“编制预算”等关键词时，必须主动读取 `套定额工作流程.md` 文件，并严格执行其中的套定额工作流程。
 
 通过 CLI 接口用自然语言控制程序：
 
@@ -299,4 +305,4 @@ python src/cli/cli.py stats
 - [河南省2016安装工程预算定额](src/河南省通用安装工程预算定额2016.txt)
 - [广联达服务新干线](https://www.fwxgx.com/) - 定额详情参考网站
 - [广联达预算软件](https://www.glodon.com/)
-- [工程样板（广联达输出格式）](规则样板/3万吨年CHDM(1,4-环己烷二甲醇)项目/) - 电气/电信预算表，含定额编号示例
+- [工程样板（广联达输出格式）](规则样板/) - 电气/电信预算表，含定额编号示例
