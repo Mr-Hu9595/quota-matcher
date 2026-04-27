@@ -1,0 +1,981 @@
+2026-04-26 14:06:42 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 14:06:42 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 14:06:42 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:06:42 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:06:42 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:06:42 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:06:42 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:06:42 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:06:42 | quota.data | DEBUG | 获取规则列表: prefix=4-10
+2026-04-26 14:06:42 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-26 14:06:42 | quota.data | DEBUG | 按前缀搜索: prefix=4-10
+2026-04-26 14:06:42 | quota.data | DEBUG | 展开前缀: ['4-10%']
+2026-04-26 14:06:42 | quota.data | DEBUG | 搜索结果: 90 条
+2026-04-26 14:06:42 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4mm², top_k=20
+2026-04-26 14:06:43 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:06:43 | quota.data | DEBUG | 按关键词搜索: keyword=黄绿双色接地线, top_k=20
+2026-04-26 14:06:43 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:06:43 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=20
+2026-04-26 14:06:43 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:06:56 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:06:56 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:06:56 | quota.data | DEBUG | 按关键词搜索: keyword=三防接线盒安装：水平三通, top_k=20
+2026-04-26 14:06:56 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:06:56 | quota.data | DEBUG | 按关键词搜索: keyword=G1", top_k=20
+2026-04-26 14:06:56 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:06:56 | quota.data | DEBUG | 获取所有定额
+2026-04-26 14:06:57 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 14:07:17 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:07:17 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:07:17 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒安装：水平三通, top_k=20
+2026-04-26 14:07:17 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:07:17 | quota.data | DEBUG | 按关键词搜索: keyword=G1", top_k=20
+2026-04-26 14:07:17 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:07:17 | quota.data | DEBUG | 获取所有定额
+2026-04-26 14:07:18 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 14:07:36 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:07:36 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:07:36 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头安装：G1", top_k=20
+2026-04-26 14:07:36 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:07:36 | quota.data | DEBUG | 获取所有定额
+2026-04-26 14:07:37 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 14:07:43 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:07:43 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:07:43 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌槽钢10#, top_k=20
+2026-04-26 14:07:44 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:07:44 | quota.data | DEBUG | 获取所有定额
+2026-04-26 14:07:45 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 14:07:58 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:07:58 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:07:58 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌角钢L40*4, top_k=20
+2026-04-26 14:07:58 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:07:58 | quota.data | DEBUG | 按关键词搜索: keyword=40*4, top_k=20
+2026-04-26 14:07:58 | quota.data | DEBUG | LIKE搜索结果: 6 条
+2026-04-26 14:08:12 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-26 14:08:12 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-26 14:08:12 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-26 14:08:12 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-26 14:08:12 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-26 14:08:12 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌钢管DN80, top_k=20
+2026-04-26 14:08:12 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:08:12 | quota.data | DEBUG | 按关键词搜索: keyword=DN80, top_k=20
+2026-04-26 14:08:12 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:08:36 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:08:36 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:08:36 | quota.data | DEBUG | 按关键词搜索: keyword=钢板200*200*8mm, top_k=20
+2026-04-26 14:08:36 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:08:36 | quota.data | DEBUG | 按关键词搜索: keyword=200*200, top_k=20
+2026-04-26 14:08:36 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 14:08:36 | quota.data | DEBUG | 按关键词搜索: keyword=8mm, top_k=20
+2026-04-26 14:08:36 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:08:49 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:08:49 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:08:49 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:18:14 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 14:18:14 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 14:18:14 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:18:14 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:18:14 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:18:14 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:18:14 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:18:14 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:18:14 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 14:18:14 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 14:18:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:18:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:18:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:18:41 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 14:18:41 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 14:18:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:18:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:18:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:18:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:18:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:18:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:18:41 | quota.data | DEBUG | 获取规则列表: prefix=4-10
+2026-04-26 14:18:41 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-26 14:18:41 | quota.data | DEBUG | 按前缀搜索: prefix=4-10
+2026-04-26 14:18:41 | quota.data | DEBUG | 展开前缀: ['4-10%']
+2026-04-26 14:18:41 | quota.data | DEBUG | 搜索结果: 90 条
+2026-04-26 14:18:41 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4mm²接地跨接黄绿双色线, top_k=20
+2026-04-26 14:18:41 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:18:41 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=20
+2026-04-26 14:18:41 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:18:53 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:18:53 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:18:53 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:19:00 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 14:19:00 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 14:19:00 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:19:00 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:19:00 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:19:00 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:19:00 | quota.data | DEBUG | 获取规则列表: prefix=4-10
+2026-04-26 14:19:00 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-26 14:19:00 | quota.data | DEBUG | 按前缀搜索: prefix=4-10
+2026-04-26 14:19:00 | quota.data | DEBUG | 展开前缀: ['4-10%']
+2026-04-26 14:19:00 | quota.data | DEBUG | 搜索结果: 90 条
+2026-04-26 14:19:00 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4mm²接地跨接黄绿双色线, top_k=20
+2026-04-26 14:19:00 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:00 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=20
+2026-04-26 14:19:00 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:19:17 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:19:17 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:19:28 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 14:19:28 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 14:19:28 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:19:28 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:19:28 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:19:28 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:19:28 | quota.data | DEBUG | 获取规则列表: prefix=4-10
+2026-04-26 14:19:28 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-26 14:19:28 | quota.data | DEBUG | 按前缀搜索: prefix=4-10
+2026-04-26 14:19:28 | quota.data | DEBUG | 展开前缀: ['4-10%']
+2026-04-26 14:19:28 | quota.data | DEBUG | 搜索结果: 90 条
+2026-04-26 14:19:28 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4mm²接地跨接黄绿双色线, top_k=20
+2026-04-26 14:19:28 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:28 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=20
+2026-04-26 14:19:28 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:19:40 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 按关键词搜索: keyword=三防接线盒安装, top_k=20
+2026-04-26 14:19:40 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 按关键词搜索: keyword=水平三通, top_k=20
+2026-04-26 14:19:40 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 按关键词搜索: keyword=G1", top_k=20
+2026-04-26 14:19:40 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 按关键词搜索: keyword=IP65, top_k=20
+2026-04-26 14:19:40 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 按关键词搜索: keyword=WF1, top_k=20
+2026-04-26 14:19:40 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:40 | quota.data | DEBUG | 获取所有定额
+2026-04-26 14:19:41 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 14:19:55 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:19:55 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:19:55 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒安装, top_k=20
+2026-04-26 14:19:55 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-26 14:19:55 | quota.data | DEBUG | 按关键词搜索: keyword=水平三通, top_k=20
+2026-04-26 14:19:55 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:55 | quota.data | DEBUG | 按关键词搜索: keyword=G1", top_k=20
+2026-04-26 14:19:55 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:55 | quota.data | DEBUG | 按关键词搜索: keyword=ExdIICT4, top_k=20
+2026-04-26 14:19:55 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:55 | quota.data | DEBUG | 按关键词搜索: keyword=Gb, top_k=20
+2026-04-26 14:19:55 | quota.data | DEBUG | LIKE搜索结果: 16 条
+2026-04-26 14:19:55 | quota.data | DEBUG | 按关键词搜索: keyword=IP65, top_k=20
+2026-04-26 14:19:56 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:19:56 | quota.data | DEBUG | 按关键词搜索: keyword=WF1, top_k=20
+2026-04-26 14:19:56 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:20:06 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头安装, top_k=20
+2026-04-26 14:20:06 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 按关键词搜索: keyword=G1"(内)-G1"(内), top_k=20
+2026-04-26 14:20:06 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 按关键词搜索: keyword=ExdIICT4, top_k=20
+2026-04-26 14:20:06 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 按关键词搜索: keyword=Gb, top_k=20
+2026-04-26 14:20:06 | quota.data | DEBUG | LIKE搜索结果: 16 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 按关键词搜索: keyword=IP65, top_k=20
+2026-04-26 14:20:06 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:06 | quota.data | DEBUG | 按关键词搜索: keyword=WF1, top_k=20
+2026-04-26 14:20:06 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:23 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:20:23 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:20:23 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌槽钢10#, top_k=20
+2026-04-26 14:20:23 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:23 | quota.data | DEBUG | 获取所有定额
+2026-04-26 14:20:24 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 14:20:40 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:20:40 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:20:40 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌角钢L40*4, top_k=20
+2026-04-26 14:20:40 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:40 | quota.data | DEBUG | 按关键词搜索: keyword=40*4, top_k=20
+2026-04-26 14:20:40 | quota.data | DEBUG | LIKE搜索结果: 6 条
+2026-04-26 14:20:47 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-26 14:20:47 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-26 14:20:47 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-26 14:20:47 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-26 14:20:47 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-26 14:20:47 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌钢管DN80, top_k=20
+2026-04-26 14:20:47 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:47 | quota.data | DEBUG | 按关键词搜索: keyword=DN80, top_k=20
+2026-04-26 14:20:47 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:20:59 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-26 14:20:59 | quota.data | DEBUG | 获取规则: 57 条
+2026-04-26 14:20:59 | quota.data | DEBUG | 按关键词搜索: keyword=钢板200*200*8mm, top_k=20
+2026-04-26 14:20:59 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:20:59 | quota.data | DEBUG | 按关键词搜索: keyword=200*200, top_k=20
+2026-04-26 14:20:59 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 14:20:59 | quota.data | DEBUG | 按关键词搜索: keyword=8mm, top_k=20
+2026-04-26 14:20:59 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-26 14:21:21 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:21:21 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:21:35 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:21:35 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=活接头, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=接头, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=角钢, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=钢管, top_k=10
+2026-04-26 14:21:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:35 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=10
+2026-04-26 14:21:36 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:36 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:21:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:21:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=电气配线, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=导线敷设, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=跨接线, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=防爆钢管, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=角钢, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=10
+2026-04-26 14:21:58 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:21:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:22:16 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:22:16 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:22:16 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线, top_k=10
+2026-04-26 14:22:16 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:22:16 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接头, top_k=10
+2026-04-26 14:22:16 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:22:16 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 14:22:16 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 14:22:16 | quota.data | DEBUG | 按关键词搜索: keyword=钢管敷设, top_k=10
+2026-04-26 14:22:17 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:22:17 | quota.data | DEBUG | 按关键词搜索: keyword=钢构件, top_k=10
+2026-04-26 14:22:17 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:22:17 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 14:22:33 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 14:22:33 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 14:22:33 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=10
+2026-04-26 14:22:33 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 14:22:33 | quota.data | DEBUG | 按关键词搜索: keyword=跨接线, top_k=10
+2026-04-26 14:22:33 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:22:33 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 14:22:33 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 14:22:33 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒安装, top_k=10
+2026-04-26 14:22:33 | quota.data | DEBUG | LIKE搜索结果: 9 条
+2026-04-26 14:22:33 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:34:03 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:34:03 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:34:03 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:34:11 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:34:11 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:34:11 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒, top_k=10
+2026-04-26 15:34:11 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:11 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:34:24 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:34:24 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=穿线管, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌钢管, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=角钢, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 按关键词搜索: keyword=活接头, top_k=10
+2026-04-26 15:34:24 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:24 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:34:34 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:34:34 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:34:34 | quota.data | DEBUG | 按关键词搜索: keyword=铜芯线, top_k=10
+2026-04-26 15:34:34 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:34 | quota.data | DEBUG | 按关键词搜索: keyword=BV导线, top_k=10
+2026-04-26 15:34:34 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:34 | quota.data | DEBUG | 按关键词搜索: keyword=钢管敷设, top_k=10
+2026-04-26 15:34:34 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:34 | quota.data | DEBUG | 按关键词搜索: keyword=镀锌钢管, top_k=10
+2026-04-26 15:34:34 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:34 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=10
+2026-04-26 15:34:34 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 15:34:34 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 15:34:35 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:34:35 | quota.data | DEBUG | 按关键词搜索: keyword=防爆, top_k=10
+2026-04-26 15:34:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:35 | quota.data | DEBUG | 按关键词搜索: keyword=角钢制作, top_k=10
+2026-04-26 15:34:35 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:34:35 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢制作, top_k=10
+2026-04-26 15:34:35 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:34:35 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:34:51 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:34:51 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:34:51 | quota.data | DEBUG | 按关键词搜索: keyword=跨接, top_k=10
+2026-04-26 15:34:51 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:51 | quota.data | DEBUG | 按关键词搜索: keyword=接头, top_k=10
+2026-04-26 15:34:51 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:51 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=10
+2026-04-26 15:34:51 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:34:51 | quota.data | DEBUG | 按关键词搜索: keyword=基础槽钢, top_k=10
+2026-04-26 15:34:51 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:34:51 | quota.data | DEBUG | 按关键词搜索: keyword=基础角钢, top_k=10
+2026-04-26 15:34:51 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:34:51 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:35:09 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:35:09 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=黄绿, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=双色, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=三防, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=DN80, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=立柱, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=钢板制作, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 按关键词搜索: keyword=钢管制作, top_k=10
+2026-04-26 15:35:09 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:35:09 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:35:38 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:35:38 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:35:38 | quota.data | DEBUG | 按前缀搜索: prefix=4-13
+2026-04-26 15:35:38 | quota.data | DEBUG | 展开前缀: ['4-13%']
+2026-04-26 15:35:38 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-26 15:35:38 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:35:50 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:35:50 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:35:50 | quota.data | DEBUG | 按前缀搜索: prefix=4-13-179
+2026-04-26 15:35:50 | quota.data | DEBUG | 展开前缀: ['4-13-179%']
+2026-04-26 15:35:50 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 15:35:50 | quota.data | DEBUG | 按前缀搜索: prefix=4-11
+2026-04-26 15:35:50 | quota.data | DEBUG | 展开前缀: ['4-11%']
+2026-04-26 15:35:50 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-26 15:35:50 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:36:02 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:36:02 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:36:02 | quota.data | DEBUG | 按前缀搜索: prefix=4-10
+2026-04-26 15:36:02 | quota.data | DEBUG | 展开前缀: ['4-10%']
+2026-04-26 15:36:02 | quota.data | DEBUG | 搜索结果: 89 条
+2026-04-26 15:36:02 | quota.data | DEBUG | 按前缀搜索: prefix=4-13-18
+2026-04-26 15:36:02 | quota.data | DEBUG | 展开前缀: ['4-13-18%']
+2026-04-26 15:36:02 | quota.data | DEBUG | 搜索结果: 11 条
+2026-04-26 15:36:02 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:36:32 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:36:32 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:36:32 | quota.data | DEBUG | 按关键词搜索: keyword=电缆接头, top_k=10
+2026-04-26 15:36:32 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-26 15:36:32 | quota.data | DEBUG | 按关键词搜索: keyword=导线接头, top_k=10
+2026-04-26 15:36:32 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:36:32 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒安装, top_k=10
+2026-04-26 15:36:32 | quota.data | DEBUG | LIKE搜索结果: 9 条
+2026-04-26 15:36:32 | quota.data | DEBUG | 按关键词搜索: keyword=焊接接头, top_k=10
+2026-04-26 15:36:32 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:36:32 | quota.data | DEBUG | 按关键词搜索: keyword=10#, top_k=10
+2026-04-26 15:36:32 | quota.data | DEBUG | LIKE搜索结果: 6 条
+2026-04-26 15:36:32 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢10, top_k=10
+2026-04-26 15:36:32 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:36:32 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:36:46 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:36:46 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:36:46 | quota.data | DEBUG | 按前缀搜索: prefix=4-12-10
+2026-04-26 15:36:46 | quota.data | DEBUG | 展开前缀: ['4-12-10%']
+2026-04-26 15:36:46 | quota.data | DEBUG | 搜索结果: 11 条
+2026-04-26 15:36:46 | quota.data | DEBUG | 按前缀搜索: prefix=4-7
+2026-04-26 15:36:46 | quota.data | DEBUG | 展开前缀: ['4-7%']
+2026-04-26 15:36:46 | quota.data | DEBUG | 搜索结果: 50 条
+2026-04-26 15:36:46 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:37:02 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:37:02 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:37:02 | quota.data | DEBUG | 按前缀搜索: prefix=2-2-13
+2026-04-26 15:37:02 | quota.data | DEBUG | 展开前缀: ['2-2-13%']
+2026-04-26 15:37:02 | quota.data | DEBUG | 搜索结果: 11 条
+2026-04-26 15:37:02 | quota.data | DEBUG | 按前缀搜索: prefix=4-4
+2026-04-26 15:37:02 | quota.data | DEBUG | 展开前缀: ['4-4%']
+2026-04-26 15:37:02 | quota.data | DEBUG | 搜索结果: 84 条
+2026-04-26 15:37:02 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:37:27 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:37:27 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:37:27 | quota.data | DEBUG | 按前缀搜索: prefix=8-777
+2026-04-26 15:37:27 | quota.data | DEBUG | 展开前缀: ['8-777%']
+2026-04-26 15:37:27 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 15:37:27 | quota.data | DEBUG | 按关键词搜索: keyword=活接头, top_k=10
+2026-04-26 15:37:27 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:37:27 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接头, top_k=10
+2026-04-26 15:37:28 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:37:28 | quota.data | DEBUG | 按关键词搜索: keyword=钢管, top_k=10
+2026-04-26 15:37:28 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:37:28 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:37:43 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:37:43 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:37:43 | quota.data | DEBUG | 按关键词搜索: keyword=立柱制作, top_k=10
+2026-04-26 15:37:43 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:37:43 | quota.data | DEBUG | 按关键词搜索: keyword=钢管立柱, top_k=10
+2026-04-26 15:37:43 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:37:43 | quota.data | DEBUG | 按关键词搜索: keyword=铁构件制作, top_k=10
+2026-04-26 15:37:43 | quota.data | DEBUG | LIKE搜索结果: 4 条
+2026-04-26 15:37:43 | quota.data | DEBUG | 按关键词搜索: keyword=铁构件安装, top_k=10
+2026-04-26 15:37:43 | quota.data | DEBUG | LIKE搜索结果: 4 条
+2026-04-26 15:37:43 | quota.data | DEBUG | 按关键词搜索: keyword=支撑制作, top_k=10
+2026-04-26 15:37:43 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:37:43 | quota.data | DEBUG | 按关键词搜索: keyword=设备支架, top_k=10
+2026-04-26 15:37:43 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:37:43 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:38:20 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:38:20 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-12-100, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-12-100
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-12-101, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-12-101
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-12-102, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-12-102
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-12-103, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-12-103
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-7-1, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-7-1
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-7-2, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-7-2
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=8-777, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 8-777
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-13-181, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-13-181
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-10-59, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-10-59
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-10-60, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-10-60
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-10-61, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-10-61
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询定额: code=4-10-76, profession=None
+2026-04-26 15:38:20 | quota.data | DEBUG | 查询结果: 找到 4-10-76
+2026-04-26 15:38:20 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:38:33 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:38:33 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-13-179, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-13-179
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-13-180, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-13-180
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-13-181, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-13-181
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-13-182, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-13-182
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=8-777, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 8-777
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=8-776, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 8-776
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=8-774, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 8-774
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=8-775, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 8-775
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-12-100, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-12-100
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-12-102, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-12-102
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-10-59, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-10-59
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-10-60, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-10-60
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-10-61, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-10-61
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-10-76, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-10-76
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-7-5, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-7-5
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-7-6, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-7-6
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-7-7, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-7-7
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询定额: code=4-7-8, profession=None
+2026-04-26 15:38:33 | quota.data | DEBUG | 查询结果: 找到 4-7-8
+2026-04-26 15:38:33 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:38:55 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:38:55 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:38:55 | quota.data | DEBUG | 按关键词搜索: keyword=基础槽钢, top_k=10
+2026-04-26 15:38:55 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 15:38:55 | quota.data | DEBUG | 按前缀搜索: prefix=2-2-13
+2026-04-26 15:38:55 | quota.data | DEBUG | 展开前缀: ['2-2-13%']
+2026-04-26 15:38:55 | quota.data | DEBUG | 搜索结果: 11 条
+2026-04-26 15:38:55 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=10
+2026-04-26 15:38:55 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:38:55 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:39:08 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:39:08 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询定额: code=2-2-132, profession=None
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询结果: 找到 2-2-132
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询定额: code=2-2-133, profession=None
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询结果: 找到 2-2-133
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询定额: code=2-2-134, profession=None
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询结果: 找到 2-2-134
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询定额: code=2-2-135, profession=None
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询结果: 找到 2-2-135
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询定额: code=2-2-136, profession=None
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询结果: 找到 2-2-136
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询定额: code=2-2-137, profession=None
+2026-04-26 15:39:08 | quota.data | DEBUG | 查询结果: 找到 2-2-137
+2026-04-26 15:39:08 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:39:29 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:39:29 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:39:29 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=10
+2026-04-26 15:39:29 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:39:29 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=10
+2026-04-26 15:39:29 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:39:29 | quota.data | DEBUG | 按关键词搜索: keyword=立柱, top_k=10
+2026-04-26 15:39:29 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:39:29 | quota.data | DEBUG | 按关键词搜索: keyword=现场制作, top_k=10
+2026-04-26 15:39:29 | quota.data | DEBUG | LIKE搜索结果: 6 条
+2026-04-26 15:39:29 | quota.data | DEBUG | 按关键词搜索: keyword=设备立柱, top_k=10
+2026-04-26 15:39:29 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:39:29 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 15:39:52 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 15:39:52 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 15:39:52 | quota.data | DEBUG | 按关键词搜索: keyword=接地铜, top_k=10
+2026-04-26 15:39:52 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:39:52 | quota.data | DEBUG | 按关键词搜索: keyword=接地导线, top_k=10
+2026-04-26 15:39:52 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 15:39:52 | quota.data | DEBUG | 按关键词搜索: keyword=绝缘导线, top_k=10
+2026-04-26 15:39:52 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:39:52 | quota.data | DEBUG | 按关键词搜索: keyword=4mm2, top_k=10
+2026-04-26 15:39:52 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 15:39:52 | quota.data | DEBUG | 按关键词搜索: keyword=截面4, top_k=10
+2026-04-26 15:39:52 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 15:39:52 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:24:25 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:24:25 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=角钢, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=钢管, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=5
+2026-04-26 16:24:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:25 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:24:37 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:24:37 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=角钢, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=钢管, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=5
+2026-04-26 16:24:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:24:37 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:25:01 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:25:01 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:25:01 | quota.data | DEBUG | 按关键词搜索: keyword=BV, top_k=5
+2026-04-26 16:25:01 | quota.data | DEBUG | LIKE搜索结果: 4 条
+2026-04-26 16:25:01 | quota.data | DEBUG | 按关键词搜索: keyword=穿线管, top_k=5
+2026-04-26 16:25:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:01 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌, top_k=5
+2026-04-26 16:25:01 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:25:01 | quota.data | DEBUG | 按关键词搜索: keyword=黄绿, top_k=5
+2026-04-26 16:25:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:01 | quota.data | DEBUG | 按关键词搜索: keyword=跨接, top_k=5
+2026-04-26 16:25:02 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:25:02 | quota.data | DEBUG | 按关键词搜索: keyword=电信, top_k=5
+2026-04-26 16:25:02 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-26 16:25:02 | quota.data | DEBUG | 按关键词搜索: keyword=摄像头立柱, top_k=5
+2026-04-26 16:25:02 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:02 | quota.data | DEBUG | 按关键词搜索: keyword=活接头, top_k=5
+2026-04-26 16:25:02 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:02 | quota.data | DEBUG | 按关键词搜索: keyword=三防, top_k=5
+2026-04-26 16:25:02 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 16:25:02 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:25:25 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:25:25 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:25:25 | quota.data | DEBUG | 按前缀搜索: prefix=11
+2026-04-26 16:25:25 | quota.data | DEBUG | 展开前缀: ['11%']
+2026-04-26 16:25:25 | quota.data | DEBUG | 搜索结果: 11 条
+2026-04-26 16:25:25 | quota.data | DEBUG | 按关键词搜索: keyword=支架, top_k=5
+2026-04-26 16:25:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:25:25 | quota.data | DEBUG | 按关键词搜索: keyword=桥架, top_k=5
+2026-04-26 16:25:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:25:25 | quota.data | DEBUG | 按关键词搜索: keyword=托架, top_k=5
+2026-04-26 16:25:25 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:25:25 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:25:37 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:25:37 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:25:37 | quota.data | DEBUG | 按前缀搜索: prefix=11-7
+2026-04-26 16:25:37 | quota.data | DEBUG | 展开前缀: ['11-7%']
+2026-04-26 16:25:37 | quota.data | DEBUG | 搜索结果: 20 条
+2026-04-26 16:25:37 | quota.data | DEBUG | 按前缀搜索: prefix=11-4
+2026-04-26 16:25:37 | quota.data | DEBUG | 展开前缀: ['11-4%']
+2026-04-26 16:25:37 | quota.data | DEBUG | 搜索结果: 18 条
+2026-04-26 16:25:37 | quota.data | DEBUG | 按前缀搜索: prefix=4-13
+2026-04-26 16:25:37 | quota.data | DEBUG | 展开前缀: ['4-13%']
+2026-04-26 16:25:37 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-26 16:25:37 | quota.data | DEBUG | 按关键词搜索: keyword=DN80, top_k=5
+2026-04-26 16:25:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:25:37 | quota.data | DEBUG | 按关键词搜索: keyword=公称直径80, top_k=5
+2026-04-26 16:25:37 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-26 16:25:37 | quota.data | DEBUG | 按关键词搜索: keyword=钢管80, top_k=5
+2026-04-26 16:25:37 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:37 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:25:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:25:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:25:58 | quota.data | DEBUG | 按关键词搜索: keyword=接地线, top_k=8
+2026-04-26 16:25:58 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:25:58 | quota.data | DEBUG | 按关键词搜索: keyword=绝缘导线, top_k=8
+2026-04-26 16:25:58 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:25:58 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒安装, top_k=8
+2026-04-26 16:25:58 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:25:58 | quota.data | DEBUG | 按关键词搜索: keyword=活接头, top_k=8
+2026-04-26 16:25:58 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:58 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢安装, top_k=8
+2026-04-26 16:25:58 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:58 | quota.data | DEBUG | 按关键词搜索: keyword=角钢安装, top_k=8
+2026-04-26 16:25:59 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:59 | quota.data | DEBUG | 按关键词搜索: keyword=钢管安装, top_k=8
+2026-04-26 16:25:59 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:25:59 | quota.data | DEBUG | 按关键词搜索: keyword=钢板安装, top_k=8
+2026-04-26 16:25:59 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:59 | quota.data | DEBUG | 按关键词搜索: keyword=立柱安装, top_k=8
+2026-04-26 16:25:59 | quota.data | DEBUG | LIKE搜索结果: 7 条
+2026-04-26 16:25:59 | quota.data | DEBUG | 按关键词搜索: keyword=热镀锌钢管, top_k=8
+2026-04-26 16:25:59 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:25:59 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:26:27 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:26:27 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=4-13-179, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 4-13-179
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=4-13-180, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 4-13-180
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=4-13-181, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 4-13-181
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=4-11-211, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 4-11-211
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=3-3-189, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 3-3-189
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=8-1-290, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 8-1-290
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=10-1-27, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 10-1-27
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=3-7-7, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 3-7-7
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=6-10-20, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 6-10-20
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询定额: code=6-10-21, profession=None
+2026-04-26 16:26:27 | quota.data | DEBUG | 查询结果: 找到 6-10-21
+2026-04-26 16:26:27 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:26:52 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:26:52 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=4mm, top_k=8
+2026-04-26 16:26:52 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=4mm2, top_k=8
+2026-04-26 16:26:52 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=电缆敷设, top_k=8
+2026-04-26 16:26:52 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=接头, top_k=8
+2026-04-26 16:26:52 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=防水套管, top_k=8
+2026-04-26 16:26:52 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=钢板制作, top_k=8
+2026-04-26 16:26:52 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:26:52 | quota.data | DEBUG | 按关键词搜索: keyword=200, top_k=8
+2026-04-26 16:26:53 | quota.data | DEBUG | LIKE搜索结果: 8 条
+2026-04-26 16:26:53 | quota.data | DEBUG | 按关键词搜索: keyword=角钢 40, top_k=8
+2026-04-26 16:26:53 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:26:53 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢 10, top_k=8
+2026-04-26 16:26:53 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:26:53 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:27:22 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:27:22 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:27:22 | quota.data | DEBUG | 按前缀搜索: prefix=11-3
+2026-04-26 16:27:22 | quota.data | DEBUG | 展开前缀: ['11-3%']
+2026-04-26 16:27:22 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-26 16:27:22 | quota.data | DEBUG | 按前缀搜索: prefix=11-5
+2026-04-26 16:27:22 | quota.data | DEBUG | 展开前缀: ['11-5%']
+2026-04-26 16:27:22 | quota.data | DEBUG | 搜索结果: 13 条
+2026-04-26 16:27:22 | quota.data | DEBUG | 按前缀搜索: prefix=11-6
+2026-04-26 16:27:22 | quota.data | DEBUG | 展开前缀: ['11-6%']
+2026-04-26 16:27:22 | quota.data | DEBUG | 搜索结果: 20 条
+2026-04-26 16:27:22 | quota.data | DEBUG | 按前缀搜索: prefix=8-7
+2026-04-26 16:27:22 | quota.data | DEBUG | 展开前缀: ['8-7%']
+2026-04-26 16:27:22 | quota.data | DEBUG | 搜索结果: 19 条
+2026-04-26 16:27:22 | quota.data | DEBUG | 按关键词搜索: keyword=光缆, top_k=10
+2026-04-26 16:27:23 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:27:23 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:32:22 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:32:22 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:32:22 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 16:32:22 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:32:22 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒安装, top_k=10
+2026-04-26 16:32:22 | quota.data | DEBUG | LIKE搜索结果: 9 条
+2026-04-26 16:32:22 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 16:32:22 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:32:22 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:33:01 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:33:01 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 16:33:01 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4, top_k=10
+2026-04-26 16:33:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=三防接线盒, top_k=10
+2026-04-26 16:33:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=10
+2026-04-26 16:33:01 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 16:33:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢支架, top_k=10
+2026-04-26 16:33:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:01 | quota.data | DEBUG | 按关键词搜索: keyword=角钢支架, top_k=10
+2026-04-26 16:33:02 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 16:33:02 | quota.data | DEBUG | 按关键词搜索: keyword=立柱制作, top_k=10
+2026-04-26 16:33:02 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:02 | quota.data | DEBUG | 按关键词搜索: keyword=一般铁构件, top_k=10
+2026-04-26 16:33:02 | quota.data | DEBUG | LIKE搜索结果: 6 条
+2026-04-26 16:33:02 | quota.data | DEBUG | 按关键词搜索: keyword=DN80, top_k=10
+2026-04-26 16:33:02 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:33:02 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=10
+2026-04-26 16:33:02 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:33:02 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:33:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:33:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:33:13 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 16:33:13 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:33:13 | quota.data | DEBUG | 按关键词搜索: keyword=BV-4, top_k=10
+2026-04-26 16:33:13 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:13 | quota.data | DEBUG | 按关键词搜索: keyword=三防接线盒, top_k=10
+2026-04-26 16:33:13 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:13 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=10
+2026-04-26 16:33:13 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 16:33:13 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢支架, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 按关键词搜索: keyword=角钢支架, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 按关键词搜索: keyword=立柱制作, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 按关键词搜索: keyword=一般铁构件, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 6 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 按关键词搜索: keyword=DN80, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 按关键词搜索: keyword=钢板, top_k=10
+2026-04-26 16:33:14 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:33:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:33:36 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:33:36 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:33:36 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:33:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:33:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:33:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-10
+2026-04-26 16:33:58 | quota.data | DEBUG | 展开前缀: ['4-10%']
+2026-04-26 16:33:58 | quota.data | DEBUG | 搜索结果: 89 条
+2026-04-26 16:33:58 | quota.data | DEBUG | 按前缀搜索: prefix=6-2
+2026-04-26 16:33:58 | quota.data | DEBUG | 展开前缀: ['6-2%']
+2026-04-26 16:33:58 | quota.data | DEBUG | 搜索结果: 59 条
+2026-04-26 16:33:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-13
+2026-04-26 16:33:58 | quota.data | DEBUG | 展开前缀: ['4-13%']
+2026-04-26 16:33:58 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-26 16:33:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-7
+2026-04-26 16:33:58 | quota.data | DEBUG | 展开前缀: ['4-7%']
+2026-04-26 16:33:58 | quota.data | DEBUG | 搜索结果: 50 条
+2026-04-26 16:33:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-4
+2026-04-26 16:33:58 | quota.data | DEBUG | 展开前缀: ['4-4%']
+2026-04-26 16:33:58 | quota.data | DEBUG | 搜索结果: 84 条
+2026-04-26 16:33:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:34:30 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:34:30 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-10-59
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-10-59%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-10-60
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-10-60%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-10-61
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-10-61%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-13-181
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-13-181%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-13-179
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-13-179%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 1 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=8-1
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['8-1%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 85 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=6-2
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['6-2%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 59 条
+2026-04-26 16:34:30 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-26 16:34:30 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-26 16:34:30 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-26 16:34:31 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:35:01 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:35:01 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:35:01 | quota.data | DEBUG | 按前缀搜索: prefix=4-7
+2026-04-26 16:35:01 | quota.data | DEBUG | 展开前缀: ['4-7%']
+2026-04-26 16:35:01 | quota.data | DEBUG | 搜索结果: 50 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 按前缀搜索: prefix=4-8
+2026-04-26 16:35:01 | quota.data | DEBUG | 展开前缀: ['4-8%']
+2026-04-26 16:35:01 | quota.data | DEBUG | 搜索结果: 54 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-26 16:35:01 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-26 16:35:01 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 按关键词搜索: keyword=活接头, top_k=10
+2026-04-26 16:35:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 按关键词搜索: keyword=焊接钢管, top_k=10
+2026-04-26 16:35:01 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 按关键词搜索: keyword=镀锌钢管, top_k=10
+2026-04-26 16:35:01 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢, top_k=10
+2026-04-26 16:35:01 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:01 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:35:34 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:35:34 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:35:34 | quota.data | DEBUG | 按关键词搜索: keyword=钢制, top_k=10
+2026-04-26 16:35:34 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:34 | quota.data | DEBUG | 按关键词搜索: keyword=电缆保护管, top_k=10
+2026-04-26 16:35:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按前缀搜索: prefix=6-2
+2026-04-26 16:35:35 | quota.data | DEBUG | 展开前缀: ['6-2%']
+2026-04-26 16:35:35 | quota.data | DEBUG | 搜索结果: 59 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按关键词搜索: keyword=现场, top_k=10
+2026-04-26 16:35:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按关键词搜索: keyword=角钢支架, top_k=10
+2026-04-26 16:35:35 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按关键词搜索: keyword=槽钢支架, top_k=10
+2026-04-26 16:35:35 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按关键词搜索: keyword=立柱, top_k=10
+2026-04-26 16:35:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱, top_k=10
+2026-04-26 16:35:35 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按前缀搜索: prefix=4-13
+2026-04-26 16:35:35 | quota.data | DEBUG | 展开前缀: ['4-13%']
+2026-04-26 16:35:35 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 按前缀搜索: prefix=8-1
+2026-04-26 16:35:35 | quota.data | DEBUG | 展开前缀: ['8-1%']
+2026-04-26 16:35:35 | quota.data | DEBUG | 搜索结果: 85 条
+2026-04-26 16:35:35 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:37:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:37:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:37:13 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:56:56 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:56:56 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:56:56 | quota.data | DEBUG | 按关键词搜索: keyword=接地, top_k=10
+2026-04-26 16:56:56 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:56:56 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:57:00 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:57:00 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:57:00 | quota.data | DEBUG | 按关键词搜索: keyword=接线盒, top_k=10
+2026-04-26 16:57:00 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 16:57:00 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:59:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:59:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:59:13 | quota.data | DEBUG | 初始化规则数据库
+2026-04-26 16:59:13 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-26 16:59:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 16:59:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 16:59:13 | quota.data | DEBUG | 按关键词搜索: keyword=BV接地线, top_k=10
+2026-04-26 16:59:13 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 16:59:13 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 16:59:13 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:28:57 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:28:57 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:28:57 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:03 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:03 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:03 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:16 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:16 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:16 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 17:29:16 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 17:29:16 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:26 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:26 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:26 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=10
+2026-04-26 17:29:26 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 17:29:26 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:33 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:33 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:33 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 17:29:33 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 17:29:33 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:39 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:39 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:39 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 17:29:39 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 17:29:39 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:46 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:46 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:46 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 17:29:46 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 17:29:46 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:55 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:55 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:55 | quota.data | DEBUG | 按关键词搜索: keyword=接地跨接, top_k=10
+2026-04-26 17:29:55 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-26 17:29:55 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:29:59 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:29:59 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:29:59 | quota.data | DEBUG | 按关键词搜索: keyword=防爆接线盒, top_k=10
+2026-04-26 17:29:59 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-26 17:29:59 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:02 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:02 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:02 | quota.data | DEBUG | 按关键词搜索: keyword=防爆活接头, top_k=10
+2026-04-26 17:30:02 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-26 17:30:02 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:10 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:10 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:10 | quota.data | DEBUG | 按前缀搜索: prefix=接地
+2026-04-26 17:30:10 | quota.data | DEBUG | 展开前缀: ['接地%']
+2026-04-26 17:30:10 | quota.data | DEBUG | 搜索结果: 0 条
+2026-04-26 17:30:10 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:13 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:20 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:20 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:20 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:27 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:27 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:27 | quota.data | DEBUG | 获取所有定额
+2026-04-26 17:30:28 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 17:30:28 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:35 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:35 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:35 | quota.data | DEBUG | 获取所有定额
+2026-04-26 17:30:36 | quota.data | DEBUG | 总记录数: 37821
+2026-04-26 17:30:36 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-26 17:30:46 | quota.data | DEBUG | quotas表检查完成
+2026-04-26 17:30:46 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-26 17:30:46 | quota.data | DEBUG | 数据库连接已关闭

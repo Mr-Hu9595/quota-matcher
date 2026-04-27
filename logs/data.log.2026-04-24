@@ -1,0 +1,909 @@
+2026-04-24 08:18:48 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 08:18:48 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 08:18:48 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 08:18:51 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 08:18:51 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 08:35:56 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 08:35:56 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 08:35:56 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 08:35:56 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 08:35:56 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 08:49:13 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 08:49:13 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 08:49:13 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 08:49:13 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:10:02 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:10:02 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:10:02 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:13:05 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:13:05 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 09:13:05 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 09:22:09 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:22:09 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:22:09 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:22:09 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:22:09 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:22:09 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:23:49 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:23:49 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 09:23:49 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 09:24:03 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:24:03 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:24:03 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:24:03 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:24:15 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:24:15 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:24:15 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:24:15 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:24:15 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-24 09:24:15 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:24:34 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:24:34 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:24:34 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 09:24:34 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 09:24:34 | quota.data | DEBUG | 搜索结果: 9 条
+2026-04-24 09:24:34 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:24:42 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:24:42 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:24:42 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 09:24:42 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 09:24:43 | quota.data | DEBUG | 搜索结果: 24 条
+2026-04-24 09:24:43 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:24:51 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:24:51 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:24:51 | quota.data | DEBUG | 按关键词搜索: keyword=防爆电动机, top_k=20
+2026-04-24 09:24:51 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 09:24:51 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:25:00 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:25:00 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:25:00 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:25:00 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:27:13 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:27:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:27:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:27:13 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:27:13 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 09:27:13 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 09:27:13 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 09:27:13 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 09:27:13 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:35:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:35:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:35:41 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:35:41 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:35:41 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-24 09:35:41 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:35:55 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:35:55 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:35:55 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 09:35:55 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 09:35:55 | quota.data | DEBUG | 搜索结果: 24 条
+2026-04-24 09:35:55 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:44:01 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:44:01 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:44:01 | quota.data | DEBUG | 按关键词搜索: keyword=半周长, top_k=10
+2026-04-24 09:44:01 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 09:44:01 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:45:34 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:45:34 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:45:34 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 09:45:34 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 09:45:34 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-24 09:45:34 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:45:47 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:45:47 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:45:47 | quota.data | DEBUG | 按关键词搜索: keyword=电力电缆, top_k=10
+2026-04-24 09:45:47 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 09:45:47 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:45:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:45:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:45:58 | quota.data | DEBUG | 按关键词搜索: keyword=截面, top_k=10
+2026-04-24 09:45:58 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 09:45:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:48:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:48:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:48:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-11
+2026-04-24 09:48:58 | quota.data | DEBUG | 展开前缀: ['4-11%']
+2026-04-24 09:48:58 | quota.data | DEBUG | 搜索结果: 27 条
+2026-04-24 09:48:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:49:57 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:49:57 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:49:57 | quota.data | DEBUG | 查询定额: code=4-9-159, profession=None
+2026-04-24 09:49:57 | quota.data | DEBUG | 查询结果: 找到 4-9-159
+2026-04-24 09:49:57 | quota.data | DEBUG | 查询定额: code=4-6-29, profession=None
+2026-04-24 09:49:57 | quota.data | DEBUG | 查询结果: 找到 4-6-29
+2026-04-24 09:49:57 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:50:16 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:50:16 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-12-82, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-12-82
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-12-83, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-12-83
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-12-84, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-12-84
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-12-85, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-12-85
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-6-27, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-6-27
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-6-28, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-6-28
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-6-29, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-6-29
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-6-30, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-6-30
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询定额: code=4-2-78, profession=None
+2026-04-24 09:50:16 | quota.data | DEBUG | 查询结果: 找到 4-2-78
+2026-04-24 09:50:16 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:51:36 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:51:36 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:51:36 | quota.data | DEBUG | 查询定额: code=4-12-82, profession=None
+2026-04-24 09:51:36 | quota.data | DEBUG | 查询结果: 找到 4-12-82
+2026-04-24 09:51:36 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:54:46 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:54:46 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:54:46 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 09:54:46 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 09:54:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:54:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:54:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 09:54:58 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 09:54:58 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-24 09:54:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:55:14 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:55:14 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:55:14 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:55:14 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:55:14 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:55:14 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:55:14 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:55:14 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:55:14 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:55:14 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:55:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:55:31 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:55:31 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:55:31 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 09:55:31 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 09:55:31 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-24 09:55:31 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:56:54 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:56:54 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:56:54 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:56:54 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:56:54 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:56:54 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 09:56:54 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 09:56:54 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 09:56:54 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 09:56:54 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:57:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:57:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:57:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:57:58 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:57:58 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 09:57:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:58:47 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:58:47 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:58:47 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:58:47 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:58:47 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:58:47 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 09:58:47 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 09:58:47 | quota.data | DEBUG | 搜索结果: 24 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 09:58:47 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 09:58:47 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 09:58:47 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 09:58:47 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:59:05 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 09:59:05 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 09:59:05 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 09:59:05 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 09:59:05 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 09:59:05 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 09:59:21 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 09:59:21 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 09:59:21 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 09:59:21 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 10:00:30 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 10:00:30 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 10:00:30 | quota.data | DEBUG | 获取规则: code=4-12-28
+2026-04-24 10:01:18 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:01:18 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:01:18 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 10:01:18 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 10:01:18 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 10:01:18 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:01:37 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:01:37 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:01:37 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 10:01:37 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 10:01:37 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 10:01:37 | quota.data | DEBUG | 查询定额: code=4-12-82, profession=None
+2026-04-24 10:01:37 | quota.data | DEBUG | 查询结果: 找到 4-12-82
+2026-04-24 10:01:37 | quota.data | DEBUG | 查询定额: code=4-12-100, profession=None
+2026-04-24 10:01:37 | quota.data | DEBUG | 查询结果: 找到 4-12-100
+2026-04-24 10:01:37 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:02:14 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:02:14 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:02:14 | quota.data | DEBUG | 查询定额: code=4-12-82, profession=None
+2026-04-24 10:02:14 | quota.data | DEBUG | 查询结果: 找到 4-12-82
+2026-04-24 10:02:14 | quota.data | DEBUG | 查询定额: code=4-12-100, profession=None
+2026-04-24 10:02:14 | quota.data | DEBUG | 查询结果: 找到 4-12-100
+2026-04-24 10:02:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:03:34 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:03:34 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:03:34 | quota.data | DEBUG | 查询定额: code=4-12-28, profession=None
+2026-04-24 10:03:34 | quota.data | DEBUG | 查询结果: 找到 4-12-28
+2026-04-24 10:03:34 | quota.data | DEBUG | 查询定额: code=4-12-82, profession=None
+2026-04-24 10:03:34 | quota.data | DEBUG | 查询结果: 找到 4-12-82
+2026-04-24 10:03:34 | quota.data | DEBUG | 查询定额: code=4-12-100, profession=None
+2026-04-24 10:03:34 | quota.data | DEBUG | 查询结果: 找到 4-12-100
+2026-04-24 10:03:34 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:04:00 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 10:04:00 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 10:04:00 | quota.data | DEBUG | 获取规则: code=4-12-28
+2026-04-24 10:04:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:04:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:04:41 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 10:04:41 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 10:04:41 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 10:04:41 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:06:58 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:06:58 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:06:58 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 10:06:58 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 10:06:58 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询定额: code=4-12-82, profession=None
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询结果: 找到 4-12-82
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询定额: code=4-12-83, profession=None
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询结果: 找到 4-12-83
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询定额: code=4-12-84, profession=None
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询结果: 找到 4-12-84
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询定额: code=4-12-85, profession=None
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询结果: 找到 4-12-85
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询定额: code=4-12-100, profession=None
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询结果: 找到 4-12-100
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询定额: code=4-12-101, profession=None
+2026-04-24 10:06:58 | quota.data | DEBUG | 查询结果: 找到 4-12-101
+2026-04-24 10:06:58 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:09:16 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:09:16 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:09:16 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:09:59 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:09:59 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:09:59 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:10:14 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:10:14 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:10:14 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:10:43 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 10:10:43 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 10:10:43 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:10:43 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:10:43 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 10:10:43 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 10:10:43 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 10:10:43 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 10:10:43 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 10:10:43 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:10:56 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 10:10:56 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 10:10:56 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:10:56 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 10:10:56 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 10:10:56 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 10:10:56 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 10:10:56 | quota.data | DEBUG | 搜索结果: 24 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 10:10:56 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 10:10:56 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 10:10:56 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 10:10:56 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:17:23 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:17:23 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:17:23 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 10:17:23 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 10:17:23 | quota.data | DEBUG | 搜索结果: 24 条
+2026-04-24 10:17:23 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:18:25 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 10:18:25 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 10:18:25 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 10:18:25 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 10:18:25 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 10:18:25 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 10:20:28 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:20:28 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:20:28 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 10:20:28 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 10:20:28 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 10:20:28 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 10:26:24 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 10:26:24 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 10:26:24 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 10:26:24 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 10:26:24 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 10:26:24 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 10:26:24 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:13:42 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:13:42 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:13:42 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:13:42 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 11:13:42 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 11:13:42 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:13:52 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:13:52 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:13:52 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:13:52 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:14:19 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:14:19 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:14:19 | quota.data | DEBUG | 获取规则: code=4-9-160
+2026-04-24 11:14:19 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:14:19 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:14:19 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:14:19 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:14:19 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:50:04 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:50:04 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:50:04 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:50:04 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 24 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 11:50:04 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 11:50:04 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 11:50:04 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 11:50:04 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:50:27 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:50:27 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:50:27 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:27 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:27 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:50:27 | quota.data | DEBUG | 查询定额: code=4-9-159, profession=None
+2026-04-24 11:50:27 | quota.data | DEBUG | 查询结果: 找到 4-9-159
+2026-04-24 11:50:27 | quota.data | DEBUG | 查询定额: code=4-9-160, profession=None
+2026-04-24 11:50:27 | quota.data | DEBUG | 查询结果: 找到 4-9-160
+2026-04-24 11:50:27 | quota.data | DEBUG | 查询定额: code=4-9-127, profession=None
+2026-04-24 11:50:27 | quota.data | DEBUG | 查询结果: 找到 4-9-127
+2026-04-24 11:50:27 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:50:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:50:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:50:41 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:41 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:41 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:41 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:50:53 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:50:53 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:50:53 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:50:53 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:50:53 | quota.data | DEBUG | 搜索结果: 47 条
+2026-04-24 11:50:53 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:51:33 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:51:33 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:51:33 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:51:33 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:51:33 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 11:51:33 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 11:51:33 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 11:51:33 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 11:51:33 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:51:33 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:51:33 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:51:33 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:51:33 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:51:33 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:51:33 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:51:33 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:51:33 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:51:33 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:51:33 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:51:33 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:52:07 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:52:07 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询定额: code=4-9-151, profession=None
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询结果: 找到 4-9-151
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询定额: code=4-9-152, profession=None
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询结果: 找到 4-9-152
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询定额: code=4-9-159, profession=None
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询结果: 找到 4-9-159
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询定额: code=4-9-160, profession=None
+2026-04-24 11:52:07 | quota.data | DEBUG | 查询结果: 找到 4-9-160
+2026-04-24 11:52:07 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:52:33 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:52:33 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:52:33 | quota.data | DEBUG | 获取规则: code=4-9-160
+2026-04-24 11:52:33 | quota.data | DEBUG | 获取规则: code=4-9-152
+2026-04-24 11:54:00 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:54:00 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:54:00 | quota.data | DEBUG | 获取规则: code=4-9-160
+2026-04-24 11:54:33 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:54:33 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询定额: code=4-9-151, profession=None
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询结果: 找到 4-9-151
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询定额: code=4-9-152, profession=None
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询结果: 找到 4-9-152
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询定额: code=4-9-159, profession=None
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询结果: 找到 4-9-159
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询定额: code=4-9-160, profession=None
+2026-04-24 11:54:33 | quota.data | DEBUG | 查询结果: 找到 4-9-160
+2026-04-24 11:54:33 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:57:11 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:57:11 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:57:11 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:57:11 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则列表: prefix=4-12
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则: 6 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 11:57:11 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 11:57:11 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 11:57:11 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 11:57:11 | quota.data | DEBUG | 搜索结果: 61 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:57:11 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:57:11 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:57:11 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:57:11 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 11:57:11 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 11:57:11 | quota.data | DEBUG | 搜索结果: 115 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 11:57:11 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 11:57:11 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 11:57:11 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 11:57:11 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:57:31 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:57:31 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:57:31 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 11:57:31 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 11:57:31 | quota.data | DEBUG | 搜索结果: 56 条
+2026-04-24 11:57:31 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 11:57:52 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 11:57:52 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 11:57:52 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 11:57:52 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 11:57:52 | quota.data | DEBUG | 获取规则列表: prefix=4-6
+2026-04-24 11:57:52 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 11:57:52 | quota.data | DEBUG | 按前缀搜索: prefix=4-6
+2026-04-24 11:57:52 | quota.data | DEBUG | 展开前缀: ['4-6%']
+2026-04-24 11:57:52 | quota.data | DEBUG | 搜索结果: 61 条
+2026-04-24 11:57:52 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:04:35 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:04:35 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:04:35 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 12:04:35 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 12:04:35 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 12:04:35 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱, top_k=20
+2026-04-24 12:04:35 | quota.data | DEBUG | LIKE搜索结果: 20 条
+2026-04-24 12:04:35 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:04:53 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:04:53 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:04:53 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱安装, top_k=20
+2026-04-24 12:04:53 | quota.data | DEBUG | LIKE搜索结果: 18 条
+2026-04-24 12:04:53 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 12:04:53 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 12:04:53 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-24 12:04:53 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:05:15 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:05:15 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:05:15 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱安装, top_k=20
+2026-04-24 12:05:15 | quota.data | DEBUG | LIKE搜索结果: 18 条
+2026-04-24 12:05:15 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 12:05:15 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 12:05:15 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-24 12:05:15 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:05:42 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:05:42 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询定额: code=4-2-74, profession=None
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询结果: 找到 4-2-74
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询定额: code=4-2-75, profession=None
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询结果: 找到 4-2-75
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询定额: code=4-2-76, profession=None
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询结果: 找到 4-2-76
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询定额: code=4-2-77, profession=None
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询结果: 找到 4-2-77
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询定额: code=4-2-78, profession=None
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询结果: 找到 4-2-78
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询定额: code=4-2-79, profession=None
+2026-04-24 12:05:42 | quota.data | DEBUG | 查询结果: 找到 4-2-79
+2026-04-24 12:05:42 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:06:07 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:06:07 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:06:07 | quota.data | DEBUG | 查询定额: code=4-2-75, profession=None
+2026-04-24 12:06:07 | quota.data | DEBUG | 查询结果: 找到 4-2-75
+2026-04-24 12:06:07 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:06:25 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 12:06:25 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 12:06:25 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:06:25 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:06:25 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 12:06:25 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 12:06:25 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 12:06:25 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 12:06:25 | quota.data | DEBUG | 搜索结果: 115 条
+2026-04-24 12:06:25 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 12:06:25 | quota.data | DEBUG | 获取规则: 1 条
+2026-04-24 12:06:25 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 12:06:25 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 12:06:25 | quota.data | DEBUG | 搜索结果: 115 条
+2026-04-24 12:06:26 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:08:47 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:08:47 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:08:47 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱安装, top_k=30
+2026-04-24 12:08:47 | quota.data | DEBUG | LIKE搜索结果: 18 条
+2026-04-24 12:08:47 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 12:08:47 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 12:08:47 | quota.data | DEBUG | 搜索结果: 55 条
+2026-04-24 12:08:47 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:09:03 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:09:03 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:09:03 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱安装, top_k=20
+2026-04-24 12:09:03 | quota.data | DEBUG | LIKE搜索结果: 18 条
+2026-04-24 12:09:03 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 12:12:35 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 12:12:35 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 12:12:35 | quota.data | DEBUG | 查询定额: code=4-2-78, profession=None
+2026-04-24 12:12:35 | quota.data | DEBUG | 查询结果: 找到 4-2-78
+2026-04-24 12:12:35 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 15:15:30 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 15:15:30 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 15:15:30 | quota.data | DEBUG | 按关键词搜索: keyword=火焰探测器, top_k=5
+2026-04-24 15:15:30 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-24 15:15:30 | quota.data | DEBUG | 按关键词搜索: keyword=感烟探测器, top_k=5
+2026-04-24 15:15:30 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-24 15:15:30 | quota.data | DEBUG | 按关键词搜索: keyword=消火栓按钮, top_k=5
+2026-04-24 15:15:30 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 15:15:30 | quota.data | DEBUG | 按关键词搜索: keyword=防爆探测器, top_k=5
+2026-04-24 15:15:30 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 15:15:30 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 15:16:07 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 15:16:07 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 15:16:07 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 15:16:07 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 15:16:07 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 15:16:07 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 15:16:07 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 15:16:07 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 15:16:07 | quota.data | DEBUG | 按关键词搜索: keyword=防爆型火焰探测器, top_k=20
+2026-04-24 15:16:07 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 15:16:07 | quota.data | DEBUG | 获取所有定额
+2026-04-24 15:16:08 | quota.data | DEBUG | 总记录数: 37821
+2026-04-24 15:16:24 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 15:16:24 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 15:16:24 | quota.data | DEBUG | 按关键词搜索: keyword=防爆消火栓按钮, top_k=20
+2026-04-24 15:16:24 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 15:16:24 | quota.data | DEBUG | 获取所有定额
+2026-04-24 15:16:25 | quota.data | DEBUG | 总记录数: 37821
+2026-04-24 15:16:41 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 15:16:41 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 15:16:41 | quota.data | DEBUG | 按关键词搜索: keyword=点型光电感烟火灾探测器, top_k=20
+2026-04-24 15:16:41 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 15:16:41 | quota.data | DEBUG | 获取所有定额
+2026-04-24 15:16:42 | quota.data | DEBUG | 总记录数: 37821
+2026-04-24 15:16:58 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 15:16:58 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 15:16:58 | quota.data | DEBUG | 按关键词搜索: keyword=消火栓按钮, top_k=20
+2026-04-24 15:16:58 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 15:16:58 | quota.data | DEBUG | 获取所有定额
+2026-04-24 15:16:59 | quota.data | DEBUG | 总记录数: 37821
+2026-04-24 15:17:16 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 15:17:16 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 15:20:07 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 15:20:07 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 15:20:07 | quota.data | DEBUG | 按前缀搜索: prefix=9-4
+2026-04-24 15:20:07 | quota.data | DEBUG | 展开前缀: ['9-4%']
+2026-04-24 15:20:07 | quota.data | DEBUG | 搜索结果: 50 条
+2026-04-24 15:20:07 | quota.data | DEBUG | 查询定额: code=9-4-4, profession=None
+2026-04-24 15:20:07 | quota.data | DEBUG | 查询结果: 找到 9-4-4
+2026-04-24 15:20:07 | quota.data | DEBUG | 查询定额: code=9-4-1, profession=None
+2026-04-24 15:20:07 | quota.data | DEBUG | 查询结果: 找到 9-4-1
+2026-04-24 15:20:07 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:45:06 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:45:06 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:45:06 | quota.data | DEBUG | 按前缀搜索: prefix=5-6
+2026-04-24 16:45:06 | quota.data | DEBUG | 展开前缀: ['5-6%']
+2026-04-24 16:45:06 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-24 16:45:06 | quota.data | DEBUG | 按前缀搜索: prefix=5-6
+2026-04-24 16:45:06 | quota.data | DEBUG | 展开前缀: ['5-6%']
+2026-04-24 16:45:06 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-24 16:45:06 | quota.data | DEBUG | 按前缀搜索: prefix=9-4
+2026-04-24 16:45:06 | quota.data | DEBUG | 展开前缀: ['9-4%']
+2026-04-24 16:45:06 | quota.data | DEBUG | 搜索结果: 20 条
+2026-04-24 16:45:06 | quota.data | DEBUG | 按前缀搜索: prefix=12-11
+2026-04-24 16:45:06 | quota.data | DEBUG | 展开前缀: ['12-11%']
+2026-04-24 16:45:06 | quota.data | DEBUG | 搜索结果: 20 条
+2026-04-24 16:45:06 | quota.data | DEBUG | 按前缀搜索: prefix=6-8
+2026-04-24 16:45:06 | quota.data | DEBUG | 展开前缀: ['6-8%']
+2026-04-24 16:45:06 | quota.data | DEBUG | 搜索结果: 19 条
+2026-04-24 16:45:06 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:45:39 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:45:39 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:45:39 | quota.data | DEBUG | 按关键词搜索: keyword=小型断路器, top_k=5
+2026-04-24 16:45:39 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 16:45:39 | quota.data | DEBUG | 按关键词搜索: keyword=浪涌保护器, top_k=5
+2026-04-24 16:45:39 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-24 16:45:39 | quota.data | DEBUG | 按关键词搜索: keyword=防爆挠性管, top_k=5
+2026-04-24 16:45:39 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 16:45:39 | quota.data | DEBUG | 按关键词搜索: keyword=接线箱, top_k=5
+2026-04-24 16:45:39 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-24 16:45:39 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:46:04 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:46:04 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:46:04 | quota.data | DEBUG | 按前缀搜索: prefix=6-8
+2026-04-24 16:46:04 | quota.data | DEBUG | 展开前缀: ['6-8%']
+2026-04-24 16:46:04 | quota.data | DEBUG | 搜索结果: 29 条
+2026-04-24 16:46:04 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:46:22 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 16:46:22 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 16:46:22 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 16:46:22 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 16:46:41 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:46:41 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:46:41 | quota.data | DEBUG | 按关键词搜索: keyword=空气开关, top_k=5
+2026-04-24 16:46:41 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-24 16:46:41 | quota.data | DEBUG | 按关键词搜索: keyword=小型断路器, top_k=5
+2026-04-24 16:46:41 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 16:46:41 | quota.data | DEBUG | 按关键词搜索: keyword=低压断路器, top_k=5
+2026-04-24 16:46:41 | quota.data | DEBUG | LIKE搜索结果: 1 条
+2026-04-24 16:46:41 | quota.data | DEBUG | 按关键词搜索: keyword=1P, top_k=5
+2026-04-24 16:46:41 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 16:46:41 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:47:00 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:47:00 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:47:00 | quota.data | DEBUG | 按前缀搜索: prefix=4-13
+2026-04-24 16:47:00 | quota.data | DEBUG | 展开前缀: ['4-13%']
+2026-04-24 16:47:00 | quota.data | DEBUG | 搜索结果: 27 条
+2026-04-24 16:47:00 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:47:13 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:47:13 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:47:13 | quota.data | DEBUG | 按关键词搜索: keyword=箱, top_k=50
+2026-04-24 16:47:13 | quota.data | DEBUG | LIKE搜索结果: 50 条
+2026-04-24 16:47:13 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:47:25 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:47:25 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:47:25 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 16:47:25 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 16:47:25 | quota.data | DEBUG | 搜索结果: 40 条
+2026-04-24 16:47:25 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 16:47:44 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 16:47:44 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 16:47:44 | quota.data | DEBUG | 获取规则列表: prefix=None
+2026-04-24 16:47:44 | quota.data | DEBUG | 获取规则: 55 条
+2026-04-24 16:50:27 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 16:50:27 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 16:50:27 | quota.data | DEBUG | 按关键词搜索: keyword=空气开关, top_k=10
+2026-04-24 16:50:27 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 16:50:27 | quota.data | DEBUG | 按关键词搜索: keyword=断路器, top_k=10
+2026-04-24 16:50:27 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 16:50:27 | quota.data | DEBUG | 按关键词搜索: keyword=小型断路器, top_k=10
+2026-04-24 16:50:27 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 16:50:27 | quota.data | DEBUG | 按关键词搜索: keyword=低压开关, top_k=10
+2026-04-24 16:50:27 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-24 16:50:27 | quota.data | DEBUG | 按前缀搜索: prefix=4-15
+2026-04-24 16:50:27 | quota.data | DEBUG | 展开前缀: ['4-15%']
+2026-04-24 16:50:27 | quota.data | DEBUG | 搜索结果: 17 条
+2026-04-24 16:50:27 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:12:07 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:12:07 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:12:07 | quota.data | DEBUG | 按关键词搜索: keyword=桥架 400, top_k=5
+2026-04-24 17:12:07 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 17:12:07 | quota.data | DEBUG | 按关键词搜索: keyword=电力电缆 截面240, top_k=5
+2026-04-24 17:12:07 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 17:12:07 | quota.data | DEBUG | 按关键词搜索: keyword=配电柜, top_k=5
+2026-04-24 17:12:07 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-24 17:12:07 | quota.data | DEBUG | 按关键词搜索: keyword=配电箱, top_k=5
+2026-04-24 17:12:07 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-24 17:12:07 | quota.data | DEBUG | 按关键词搜索: keyword=桥架支架, top_k=5
+2026-04-24 17:12:07 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-24 17:12:07 | quota.data | DEBUG | 按关键词搜索: keyword=镀锌钢管 DN32, top_k=5
+2026-04-24 17:12:07 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 17:12:07 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:12:32 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:12:32 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:12:32 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 17:12:32 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 17:12:32 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 17:12:32 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 17:12:32 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 17:12:32 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 17:12:32 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 17:12:32 | quota.data | DEBUG | 按关键词搜索: keyword=桥架支撑, top_k=10
+2026-04-24 17:12:32 | quota.data | DEBUG | LIKE搜索结果: 2 条
+2026-04-24 17:12:32 | quota.data | DEBUG | 按前缀搜索: prefix=4-12
+2026-04-24 17:12:32 | quota.data | DEBUG | 展开前缀: ['4-12%']
+2026-04-24 17:12:32 | quota.data | DEBUG | 搜索结果: 97 条
+2026-04-24 17:12:32 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:12:51 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:12:51 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:12:51 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 17:12:51 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 17:12:51 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-24 17:12:51 | quota.data | DEBUG | 按关键词搜索: keyword=截面≤240, top_k=5
+2026-04-24 17:12:51 | quota.data | DEBUG | LIKE搜索结果: 5 条
+2026-04-24 17:12:51 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:13:03 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 17:13:03 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 17:13:03 | quota.data | DEBUG | 获取规则列表: prefix=4-9
+2026-04-24 17:13:03 | quota.data | DEBUG | 获取规则: 16 条
+2026-04-24 17:13:32 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:13:32 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:13:32 | quota.data | DEBUG | 按前缀搜索: prefix=4-9
+2026-04-24 17:13:32 | quota.data | DEBUG | 展开前缀: ['4-9%']
+2026-04-24 17:13:32 | quota.data | DEBUG | 搜索结果: 197 条
+2026-04-24 17:13:32 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:40:27 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:40:27 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询定额: code=4-2-72, profession=None
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询结果: 找到 4-2-72
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询定额: code=4-2-74, profession=None
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询结果: 找到 4-2-74
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询定额: code=4-2-1, profession=None
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询结果: 找到 4-2-1
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询定额: code=4-11-305, profession=None
+2026-04-24 17:40:27 | quota.data | DEBUG | 查询结果: 找到 4-11-305
+2026-04-24 17:40:27 | quota.data | DEBUG | 按前缀搜索: prefix=4-2
+2026-04-24 17:40:27 | quota.data | DEBUG | 展开前缀: ['4-2%']
+2026-04-24 17:40:27 | quota.data | DEBUG | 搜索结果: 65 条
+2026-04-24 17:40:27 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:40:49 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:40:49 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:40:49 | quota.data | DEBUG | 按关键词搜索: keyword=成套配电箱, top_k=10
+2026-04-24 17:40:49 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 17:40:49 | quota.data | DEBUG | 按关键词搜索: keyword=配电柜安装, top_k=10
+2026-04-24 17:40:49 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 17:40:49 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:41:06 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:41:06 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:41:06 | quota.data | DEBUG | 按关键词搜索: keyword=低压配电柜, top_k=10
+2026-04-24 17:41:06 | quota.data | DEBUG | LIKE搜索结果: 0 条
+2026-04-24 17:41:06 | quota.data | DEBUG | 按关键词搜索: keyword=低压开关柜, top_k=10
+2026-04-24 17:41:06 | quota.data | DEBUG | LIKE搜索结果: 3 条
+2026-04-24 17:41:06 | quota.data | DEBUG | 按关键词搜索: keyword=成套配电柜, top_k=10
+2026-04-24 17:41:06 | quota.data | DEBUG | LIKE搜索结果: 10 条
+2026-04-24 17:41:06 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:41:27 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 17:41:27 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 17:41:27 | quota.data | DEBUG | 获取规则: code=4-2-72
+2026-04-24 17:41:27 | quota.data | DEBUG | 添加规则: code=4-2-72, name=低压成套配电柜安装 低压成套配电柜
+2026-04-24 17:41:28 | quota.data | INFO | 规则添加成功: 4-2-72
+2026-04-24 17:41:28 | quota.data | DEBUG | 获取规则: code=4-2-74
+2026-04-24 17:41:28 | quota.data | DEBUG | 添加规则: code=4-2-74, name=成套配电箱安装 落地式
+2026-04-24 17:41:28 | quota.data | INFO | 规则添加成功: 4-2-74
+2026-04-24 17:41:28 | quota.data | DEBUG | 获取规则列表: prefix=4-2
+2026-04-24 17:41:28 | quota.data | DEBUG | 获取规则: 3 条
+2026-04-24 17:46:09 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:46:09 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:46:09 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 17:46:09 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 17:46:09 | quota.data | DEBUG | 查询定额: code=4-7-3, profession=None
+2026-04-24 17:46:09 | quota.data | DEBUG | 查询结果: 找到 4-7-3
+2026-04-24 17:46:09 | quota.data | DEBUG | 查询定额: code=4-7-4, profession=None
+2026-04-24 17:46:09 | quota.data | DEBUG | 查询结果: 找到 4-7-4
+2026-04-24 17:46:09 | quota.data | DEBUG | 获取规则列表: prefix=4-7
+2026-04-24 17:46:09 | quota.data | DEBUG | 获取规则: 4 条
+2026-04-24 17:46:09 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:46:28 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:46:28 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:46:29 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:46:51 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:46:51 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:46:51 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 17:55:09 | quota.data | DEBUG | 初始化规则数据库
+2026-04-24 17:55:09 | quota.data | DEBUG | 规则数据库初始化完成
+2026-04-24 17:55:09 | quota.data | DEBUG | 获取规则: code=4-7-3
+2026-04-24 17:55:09 | quota.data | DEBUG | 获取规则: code=4-7-4
+2026-04-24 17:55:09 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 17:55:09 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 17:55:09 | quota.data | DEBUG | 数据库连接已关闭
+2026-04-24 18:28:00 | quota.data | DEBUG | quotas表检查完成
+2026-04-24 18:28:00 | quota.data | WARNING | FTS5不可用，将使用LIKE查询
+2026-04-24 18:28:00 | quota.data | DEBUG | 数据库连接已关闭
