@@ -9,6 +9,8 @@ build/
 *.log
 temp_*.txt
 quota_*.txt
+query_*.txt
+query_result.txt
 all_chapters.txt
 chapter4_structure.txt
 =*

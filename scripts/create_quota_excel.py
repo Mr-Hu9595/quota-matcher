@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 import sys
 import os
-sys.path.insert(0, 'E:/skillshub/quota-matcher')
+
+# 获取项目根目录（scripts的父目录）
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, PROJECT_ROOT)
+
 from src.data.quota_db import QuotaDB
 
-os.chdir('E:/skillshub/quota-matcher')
+os.chdir(PROJECT_ROOT)
 db = QuotaDB()
 
 # 定额匹配结果（根据查询结果）
@@ -18,7 +22,8 @@ quota_results = [
 ]
 
 # 输出到文件
-with open('E:/skillshub/quota-matcher/quota_result_analysis.txt', 'w', encoding='utf-8') as f:
+output_file = os.path.join(PROJECT_ROOT, 'docs', 'quota_result_analysis.txt')
+with open(output_file, 'w', encoding='utf-8') as f:
     f.write("=" * 80 + "\n")
     f.write("电信工程签证单定额套取结果\n")
     f.write("=" * 80 + "\n\n")
