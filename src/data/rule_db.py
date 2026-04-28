@@ -51,8 +51,10 @@ class RuleDB:
     """
 
     def __init__(self, db_path: str = None):
+        import os
         if db_path is None:
-            db_path = Path(__file__).parent.parent.parent / "规则库" / "rules.db"
+            # 优先使用 RULES_DB 环境变量，支持全局调用
+            db_path = os.environ.get('RULES_DB') or str(Path(__file__).parent.parent.parent / "规则库" / "rules.db")
         self.db_path = str(db_path)
         self._conn = None
         self._init_db()

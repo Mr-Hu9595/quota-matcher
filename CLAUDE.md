@@ -1,5 +1,46 @@
 # CLAUDE.md - Quota Matcher 项目上下文
 
+## 环境配置
+
+### Python 环境
+**重要**: WindowsApps 中的 python3.exe 是重定向器，不是真正的 Python。必须使用完整路径调用：
+
+```
+Python路径: C:\Users\Administrator\AppData\Local\Programs\Python\Python312\python.exe
+```
+
+**快速调用方式**:
+```bash
+PYTHON="/c/Users/Administrator/AppData/Local/Programs/Python/Python312/python.exe"
+$PYTHON -c "import sqlite3; ..."
+```
+
+sqlite3 是 Python 内置模块，无需单独安装。
+
+### 全局数据库读取（任意目录）
+
+已配置 `QUOTA_DB`、`RULES_DB` 和 `NODE_PATH` 环境变量，可从**任意目录**读取数据库：
+
+**Node.js 方式（推荐）**：
+```bash
+node ~/.claude/scripts/quota-db.js stats      # 数据库统计
+node ~/.claude/scripts/quota-db.js professions # 8大专业
+node ~/.claude/scripts/quota-db.js query "电力电缆"   # 关键词搜索
+node ~/.claude/scripts/quota-db.js prefix "4-9"      # 前缀搜索
+node ~/.claude/scripts/quota-db.js code "4-9-165"    # 精确查询
+node ~/.claude/scripts/quota-db.js chapters "河南省安装工程" # 章分布
+```
+
+**Python 方式**：
+```bash
+$PYTHON -c "import sqlite3; conn = sqlite3.connect('$QUOTA_DB'); ..."
+```
+
+### 项目内 Python 读取
+项目内 Python 代码应使用 `QuotaDB` 类（`src/data/quota_db.py`）和 `RuleDB` 类（`src/data/rule_db.py`），它们会自动从 `QUOTA_DB` 和 `RULES_DB` 环境变量读取数据库路径。
+
+---
+
 ## 语言
 项目过程中使用中文和用户交流
 

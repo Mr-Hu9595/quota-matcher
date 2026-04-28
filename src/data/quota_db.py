@@ -43,8 +43,10 @@ class QuotaDB:
     """
 
     def __init__(self, db_path: str = None):
+        import os
         if db_path is None:
-            db_path = Path(__file__).parent.parent.parent / "db" / "quota.db"
+            # 优先使用 QUOTA_DB 环境变量，支持全局调用
+            db_path = os.environ.get('QUOTA_DB') or str(Path(__file__).parent.parent.parent / "db" / "quota.db")
         self.db_path = str(db_path)
         self._conn = None
         self._fts_available = None
